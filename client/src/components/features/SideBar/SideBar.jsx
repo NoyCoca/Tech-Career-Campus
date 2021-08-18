@@ -6,6 +6,7 @@ const SideBar = ({children})=>{
         <Link to={"/grades"}>הציונים שלי</Link>
         <Link to={"/syllabus"}>סילבוס</Link>
         {children}
+        
       </div>
     );
 }
