@@ -4,14 +4,14 @@ import ForumPostComponent from "../ForumPostComponent/ForumPostComponent";
 const ForumPostsComponent = (setCurrentId) => {
   const posts = [
     {
-      _id: 1,
+      id: 1,
       name: "shlomo",
       email: "shlomo@gmail.com",
       createdAt: new Date().toISOString(),
       message: "how do i react to react?",
     },
     {
-      _id: 2,
+      id: 2,
       name: "kiba",
       email: "kiba@gmail.com",
       createdAt: new Date().toISOString(),
@@ -23,7 +23,7 @@ const ForumPostsComponent = (setCurrentId) => {
   ) : (
     <div>
       {posts.map((post) => (
-        <div>
+        <div key={post.id}>
           <ForumPostComponent post={post} setCurrentId={setCurrentId} />
         </div>
       ))}
