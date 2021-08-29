@@ -19,10 +19,3 @@ export const fetchSyllabus = () => {
             console.error(err);
         });
 }
-
-export const fetchDailySchedule = () => {
-    return fetch('http://localhost:8080/api/schedule')
-   .then((res) =>  res.json())
-   .then((response) => response)
-   .catch(err => console.log(err));
-};
