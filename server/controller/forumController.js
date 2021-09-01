@@ -70,10 +70,25 @@ const deleteMessage = async (req, res) => {
 
     }
 }
+const updateMessage = async (req, res) => {
+   const post = req.body.post
+  try {
+    await ForumModel.findByIdAndUpdate(req.params.id,post,{new:true}, (err, result) => {
+          if (err) throw err;
+          res.json({ message: "updated message success", data:result})
+      })
+
+  }
+  catch (err) {
+      res.json({ message: "problem with update", error: err });
+
+  }
+}
 
 module.exports = {
   messagesByStaff,
   messagesByStudent,
   getAllMessages,
-  deleteMessage
+  deleteMessage,
+  updateMessage
 };

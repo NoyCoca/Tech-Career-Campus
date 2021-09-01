@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 const isToken = (req, res, next) => {
   const header = req.header("Authorization");
-  console.log(header);
+
   const [bearer, token] = header.split(" ");
 
   if (bearer === "Bearer" && typeof token !== "undefined") {

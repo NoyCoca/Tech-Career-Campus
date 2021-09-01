@@ -5,9 +5,7 @@ import jwt_decode from "jwt-decode";
 import "./form.css";
 const ForumFormComponent = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
-    firstName: "",
-    email: "",
-    title:"",
+    title: "",
     message: "",
   });
   const post = useSelector((state) =>
@@ -17,7 +15,6 @@ const ForumFormComponent = ({ currentId, setCurrentId }) => {
   const token = localStorage.getItem("jwtToken");
   const user = jwt_decode(token);
 
-
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
@@ -26,19 +23,27 @@ const ForumFormComponent = ({ currentId, setCurrentId }) => {
     e.preventDefault();
     if (currentId) {
       dispatch(
-        updatePost(currentId, { ...postData, firstName: user?.firstName, email:user?.email })
+        updatePost(currentId, {
+          ...postData,
+          firstName: user?.firstName,
+          email: user?.email,
+        })
       );
     } else {
-      dispatch(createPost({ ...postData, firstName: user?.firstName , email:user?.email}));
+      dispatch(
+        createPost({
+          ...postData,
+          firstName: user?.firstName,
+          email: user?.email,
+        })
+      );
     }
     clear();
   };
   const clear = () => {
     setCurrentId(null);
     setPostData({
-      firstName: "",
-      email: "",
-      title:"",
+      title: "",
       message: "",
     });
   };
@@ -53,7 +58,9 @@ const ForumFormComponent = ({ currentId, setCurrentId }) => {
             placeholder="כותרת..."
             value={postData.title}
             id="name"
-            onChange={(e) => setPostData({ ...postData, title: e.target.value })}
+            onChange={(e) =>
+              setPostData({ ...postData, title: e.target.value })
+            }
           />
         </p>
 

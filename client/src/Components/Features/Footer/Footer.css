@@ -1,79 +1,162 @@
 .footerDiv {
     /* border: 1px solid black; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: absolute;
+    background-color: rgb(71, 71, 71);
+    color: white;
     width: 100vw;
-    bottom: 0;
+    height: 280px;
     
 }
-.footerDiv .contactUsClass {
-    /* border: 1px solid black; */
+
+.footer{
+    background-color: rgb(71, 71, 71);
+    width: 100vw;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 250px;
-    height: 100px;
 }
-.footerDiv .contactUsClass h4{
+.footer .copyright-text p a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container{
+   /* border: 1px solid black;*/ 
+    width: 1400px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerDiv .contactUsClass  {
+    /* border: 1px solid black;*/
+    width: 240px;
+    height: 150px;
+}
+.footerDiv i {
     /* border: 1px solid black; */
     display: flex;
-    justify-content: flex-end;
-    width: 230px;
-    height: 30px;
+    justify-content: start;
+    align-items: center;
+    width: 30px;
+    height: 40px; 
+    
 }
 
 .footerDiv .contactUsClass  ul li{
     display: flex;
-    justify-content: flex-end;
+    justify-content: start;
     align-items: center;
     /* border: 1px solid black; */
-    width: 230px;
-    height: 20px;
+    width: 280px;
+    height: 40px;
+    font-size: 18px;
 }
+.footerDiv .about{ 
+    /*border: 1px solid black;*/ 
+    width: 320px;
+    height: 120px;
+    
+}
+.footerDiv .about ol li{
+    width: 300px;
+    height: 35px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 18px;  
+    
+}
+
+
 .footerDiv .aboutUsClass ul {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    /* flex-direction: row; */
-    /* border: 1px solid black; */
-    width: 350px;
-    height: 100px;
-    /* right: 60px; */
-    /* bottom: 2%; */
+     /* border: 1px solid black;*/ 
+    width: 300px;
+    height: 30px;
+    
+    
 }
 .footerDiv .aboutUsClass ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: row; */
-     display: inline-block; 
-    /* width: 60px;
-    height: 60px;  */
-    
+    margin-top: 10px;
 }
 .footerDiv .aboutUsClass ul li a{
-    color: #070707;
+    /* border: 1px solid black;  */
+    color:white;
     text-align: center;
-    padding: 12px 26px;
-    font-size: 25px;
-    border-radius: 10px;
+    padding: 0px 10px;
+    font-size: 18px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.5s;
 }
 .footerDiv .aboutUsClass ul li a:hover{
     background: linear-gradient(to bottom right,rgb(248,78,3),rgb(238,73,94),rgb(277,67,196));
     color: #f7f4f4;
+    text-decoration: none;
     
 }
-@media only screen and (max-width: 768px){
+.title1 {
+    display: flex;
+    justify-content: start; 
+    width: 130px;
+    height: 40px; 
+}
+h4 {
+     /* border: 1px solid black;  */
+    display: flex;
+    justify-content: start; 
+    font-size: 20px;
+    width: 130px;
+    height: 30px;  
+}
+.quick-link{ 
+/* border: 1px solid black;  */
+width: 180px;
+height: 150px;
+
+}
+.quick-link .quick-links li {
+display: flex;
+align-items: flex-start;
+flex-direction: column;
+font-size: 18px;
+color: white; 
+/* border: 1px solid black; */
+
+}
+.Line{
+     border: 1px solid rgb(121, 121, 121);
+     width: 1000px;
+}
+
+
+
+/* @media only screen and (max-width: 768px){
+    .container{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
     .footerDiv{
         display: flex;
         justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        align-items: center;    
     }
+
     .footerDiv .contactUsClass{
         display: none;
         
@@ -87,6 +170,6 @@
     }
     .footerDiv .aboutUsClass ul li a{
         padding:10px 30px ;
-        font-size: 20px;
+        font-size: 18px;
     }
-}
+} */

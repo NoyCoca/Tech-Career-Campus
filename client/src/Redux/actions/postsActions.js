@@ -44,9 +44,9 @@ export const createPost = (post) => async (dispatch) => {
 
 export const updatePost = (id, post) => async (dispatch) => {
   try {
-    await fetch(`http://localhost:8080/api/forum/staff`, {
+    await fetch(`http://localhost:8080/api/forum/${id}`, {
       method: "PUT",
-      body: JSON.stringify( {post:post,id, _id: "612416b7721110539c4ebf44",
+      body: JSON.stringify( {post, _id: "612416b7721110539c4ebf44",
       role: "Staff",} ),
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export const updatePost = (id, post) => async (dispatch) => {
           payload: res.data,
         })
       );
-  } catch (error) {
+  } catch (error) { 
     console.log(error);
   }
 };
