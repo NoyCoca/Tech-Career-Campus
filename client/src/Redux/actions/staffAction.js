@@ -15,7 +15,7 @@ export const getStaff = () => async dispatch => {
 export const addStuff = (staff) => async dispatch => {
 
     try {
-        await fetcher('http://localhost:8080/api/register/register', {
+        await fetcher('http://localhost:8080/api/register', {
             method: 'POST',
             body: JSON.stringify({
                 registeredAs: staff.registeredAs,
