@@ -13,14 +13,9 @@ const Events = () => {
     const [newEvent, setNewEvent] = useState({
         eventName: "",
         massage: ""
-    });
+    });;
 
     const [eventUpdate, setEventUpdate] = useState({
-        eventName: "",
-        massage: "",
-    });
-
-    const [eventUpdates, setEventUpdates] = useState({
         eventName: "",
         massage: "",
     });
@@ -43,8 +38,8 @@ const Events = () => {
         headers: defaultHeaders,
     }
 
-    useEffect(async () => {
-        await getDat();
+    useEffect( () => {
+         getDat();
     }, [])
 
     const getDat = () => {
@@ -64,10 +59,14 @@ const Events = () => {
     const updateEvent = async (_id) => {
         await fetch(`http://localhost:8080/api/event/${_id}`, optionPUT)
             .then((res) => res.json())
-            .then((res) => { setEventUpdate(res.data); })
+            .then((res) => (res.data))
             .catch((err) => { console.log(err); })
         getDat();
-    }
+        setEventUpdate({
+            eventName: "",
+            massage: "",
+        })
+        }
 
     const deleteEvent = async (_id) => {
         if (window.confirm('are you sure?')) {
@@ -79,7 +78,7 @@ const Events = () => {
         }
     }
 
-    const hendleChange = (e) => {
+    const hendleChangeNewEvent = (e) => {
         setNewEvent(
             {
                 ...newEvent,
@@ -88,7 +87,7 @@ const Events = () => {
         )
     }
 
-    const hendleChange1 = (e) => {
+    const hendleChangeEventUpdate = (e) => {
         setEventUpdate(
             {
                 ...eventUpdate,
@@ -97,28 +96,35 @@ const Events = () => {
         )
     }
 
+    const handlePopupValue = (event) => {
+        const currentEvent = event._id ?events.find((e) => e._id === event._id) : null
+           setEventUpdate({
+               eventName: currentEvent.eventName,
+               massage: currentEvent.massage,
+           })
+       }
     return (
         <div>
             <input type="button" id="sendBtn" value="שלח" onClick={sendEvent} />
             <br></br>
-            <textarea name="eventName" id="eventName" cols="100" rows="0.5" value={newEvent.eventName} placeholder="שם האירוע" onChange={(e) => { hendleChange(e) }}></textarea>
+            <textarea name="eventName" id="eventName" cols="100" rows="0.5" value={newEvent.eventName} placeholder="שם האירוע" onChange={(e) => { hendleChangeNewEvent(e) }}></textarea>
             <br></br>
-            <textarea name="massage" id="massage" cols="100" rows="10" value={newEvent.massage} placeholder="הקלד כאן" onChange={(e) => { hendleChange(e) }}></textarea>
+            <textarea name="massage" id="massage" cols="100" rows="10" value={newEvent.massage} placeholder="הקלד כאן" onChange={(e) => { hendleChangeNewEvent(e) }}></textarea>
             {
-                events.map((event, index) => {
+                events?.map((event, index) => {
                     return (
                         <span key={event._id}>
                             שם הארוע :{event.eventName}
                             <br></br>
                             הודעה :{event.massage}
                             <br></br>
-                            <Popup trigger={<input type="button" id="updateBtn" value="עדכן" />} position="right center">
+                            <Popup onOpen={()=>handlePopupValue(event)} trigger={<input type="button" id="updateBtn" value="עדכן" />} position="right center">
                                 <div>
-                                    <textarea cols="100" rows="0.5" name="eventName" id="some" value={eventUpdate.eventName} onChange={(e) => { hendleChange1(e) }}></textarea>
+                                    <textarea cols="100" rows="0.5" name="eventName" id="some" value={eventUpdate.eventName} onChange={(e) => { hendleChangeEventUpdate(e) }}></textarea>
                                     <br></br>
-                                    <textarea cols="100" rows="0.5" name="massage" value={eventUpdate.massage} onChange={(e) => { hendleChange1(e) }}></textarea>
+                                    <textarea cols="100" rows="0.5" name="massage" value={eventUpdate.massage} onChange={(e) => { hendleChangeEventUpdate(e) }}></textarea>
                                     <br></br>
-                                    <input type="button" id="confirmUpdates" value="אישור עדכונים" onClick={() => { updateEvent(event._id) }} />
+                                    <input  type="button" id="confirmUpdates" value="אישור עדכונים" onClick={() =>  updateEvent(event._id) } />
                                 </div>
                             </Popup>
                             <input type="button" id="deleteBtn" value="מחק" onClick={() => { deleteEvent(event._id) }} />
