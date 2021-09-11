@@ -18,7 +18,7 @@ const AddGrade = ({ studentId }) => {
   };
 
   return (
-    <form className="grade-form">
+    <form className="grade-form" onSubmit={(e)=> e.preventDefault()}>
       <label>Test name</label>
       <input
         type={"text"}
@@ -26,23 +26,22 @@ const AddGrade = ({ studentId }) => {
         value={newTest.name}
         name={"name"}
         onChange={(e) => HandleChange(e)}
+        required
       />
       <label>Grade</label>
       <input
+      type={"number"}
         value={newTest.grade}
         placeholder={"Grade"}
         name={"grade"}
         onChange={(e) => HandleChange(e)}
+        required
       />
       <button
         className="btn"
         onClick={(e) => {
           dispatch(addTest(newTest));
-          setNewTest({
-            grade: "",
-            name: "",
-          });
-          e.preventDefault();
+          // e.preventDefault();
         }}
       >
         Add test

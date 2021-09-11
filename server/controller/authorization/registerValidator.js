@@ -10,19 +10,16 @@ const validateRegisterInput = (data) => {
 
 
   if (Validator.isEmpty(data.firstName)) {
-   
-    errors.name = "Name field is required";
+    errors.firstName = "First Name field is required";
   }
   if (Validator.isEmpty(data.lastName)) {
   
-    errors.name = "Name field is required";
+    errors.lastName = "Last Name field is required";
   }
 
   if (Validator.isEmpty(data.email)) {
-    console.log(data.email);
     errors.email = "Email field is required";
   } else if (!Validator.isEmail(data.email)) {
-    console.log(data.email);
     errors.email = "Email is invalid";
   }
 

@@ -7,10 +7,8 @@ import "./admin.css";
 const AdminGradesComponent = () => {
   const dispatch = useDispatch();
   const students = useSelector((state) => state.students);
-  
-  useEffect(() => dispatch(getStudents()), [dispatch]);
-
   const [openTests, setOpenTests] = useState(false);
+  useEffect(() => dispatch(getStudents()), [dispatch, openTests]);
 
   return (
     <div className="admin-grade-contaniner">

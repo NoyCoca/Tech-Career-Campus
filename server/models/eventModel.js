@@ -12,7 +12,13 @@ const eventSchema = new Schema(
       type: String,
       required: true,
     },
-    creatorEvent: [{ type: Schema.Types.ObjectId, ref: "staff" }],
+    expireAt: {
+      type: Date,
+      required: true,
+      default: Date.now,
+      index: { expires: '90d' }
+    },
+    createBy: { type: Schema.Types.ObjectId, ref: "staff" },
   },
   { timestamps: true }
 );

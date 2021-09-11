@@ -1,5 +1,7 @@
-const api = "https://newsapi.org/v2/top-headlines?country=il&category=technology&apiKey="
-const api_key = "eacee67e305a4dab808bf7f4f527a643"
+import fetcher from "../utils/fetcher";
+
+const api=process.env.REACT_APP_NEWS_API
+const api_key=process.env.REACT_APP_NEWS_API_KEY
 
 const token = localStorage.getItem("jwtToken");
 export const defaultHeaders = {

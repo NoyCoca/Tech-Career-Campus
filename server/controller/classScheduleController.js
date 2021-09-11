@@ -34,7 +34,7 @@ const updateClassesName = async (req,res) => {
 }
 
 const updateClasses = async (req, res) => {
-    const taken = { $set: { isTaken: req.body.isTaken === true ? false : true } }
+    const taken = { $set: { isTaken: req.body.isTaken? false : true } }
     try {
         await ScheduleModel.findByIdAndUpdate(req.body.id , taken ,(err, result) => {
             if (err) throw err,

@@ -1,16 +1,5 @@
 const StaffModel = require('../models/staffModel');
-const StudentModel = require('../models/studentModel')
 
-const addNewStaff = async (req, res) => {
-  try {
-    await StaffModel.insertMany(req.body, (err, result) => {
-      if (err) console.log(err);
-      res.status(200).json({ massage: "create staff success!", data: result })
-    });
-  } catch (err) {
-    res.status(500).json({ massage: "creat new staff field", error: err });
-  }
-};
 
 const getAllStaff = async (req, res) => {
   try {
@@ -75,7 +64,6 @@ const getStudentsByStaff = async (req, res) => {
 
 
 module.exports = {
-  addNewStaff,
   getAllStaff,
   getStaffById,
   deleteStaffById,

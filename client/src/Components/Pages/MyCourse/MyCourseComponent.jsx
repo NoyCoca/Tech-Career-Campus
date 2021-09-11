@@ -4,8 +4,8 @@ import SideBar from '../../Features/SideBar/SideBar'
 const MyCourse = () => {
     return (
       <div>
-        <SideBar>MyCourse
-          <MyCourseRouting/>
+        <SideBar>
+            <MyCourseRouting/>
         </SideBar>
       </div>
     );

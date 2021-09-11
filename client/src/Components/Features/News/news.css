@@ -1,0 +1,9 @@
+.news-ticker-div{
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+}
+.news-ticker-div>img{
+    height: 20vh;
+    width: 40vw;
+}

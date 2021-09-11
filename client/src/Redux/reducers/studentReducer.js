@@ -1,4 +1,5 @@
-import { ADD_TEST, EDIT_GRADE, DELETE_TEST, GET_STUDENT } from '../actions/types'
+import { ADD_TEST, EDIT_GRADE, DELETE_TEST, GET_STUDENT } from '../actions/types';
+
 function studentsReducer(student = {}, action) {
     switch (action.type) {
         case GET_STUDENT:

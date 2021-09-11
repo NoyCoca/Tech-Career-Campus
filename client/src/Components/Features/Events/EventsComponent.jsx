@@ -20,6 +20,13 @@ const Events = () => {
         massage: "",
     });
 
+<<<<<<< HEAD:client/src/Components/Pages/Events/EventsComponent.jsx
+=======
+    const [eventUpdates, setEventUpdates] = useState({
+        eventName: "",
+        massage: "",
+    });
+>>>>>>> main:client/src/Components/Features/Events/EventsComponent.jsx
     const optionPOST = {
         method: 'POST',
         body: JSON.stringify(newEvent),
@@ -39,11 +46,15 @@ const Events = () => {
     }
 
     useEffect( () => {
+<<<<<<< HEAD:client/src/Components/Pages/Events/EventsComponent.jsx
          getDat();
+=======
+        getDat();
+>>>>>>> main:client/src/Components/Features/Events/EventsComponent.jsx
     }, [])
 
-    const getDat = () => {
-        fetch("http://localhost:8080/api/event", { headers: defaultHeaders })
+    const getDat = async () => {
+       await fetch("http://localhost:8080/api/event", { headers: defaultHeaders })
             .then((res) => res.json())
             .then((response) => setEvents(response.data))
             .catch(err => { console.error("GET ALL FAIL") });
@@ -57,7 +68,7 @@ const Events = () => {
     }
 
     const updateEvent = async (_id) => {
-        await fetch(`http://localhost:8080/api/event/${_id}`, optionPUT)
+       await fetch(`http://localhost:8080/api/event/${_id}`, optionPUT)
             .then((res) => res.json())
             .then((res) => (res.data))
             .catch((err) => { console.log(err); })

@@ -3,68 +3,64 @@ const Schema = mongoose.Schema;
 
 const courseSchema = new Schema(
   {
-    corse:{
-      type: {
-        name: {
-          type: String,
-          required: true,
-        },
-        CourseInformation: {
-          type: [
-            {
-              nameSubject: {
-                type:String,
-                required:true
-              },
-              topics: {
-                type: [
-                  {
-                    subject:{
-                      type:String,
-                      required:true
-                    },
-                    isDone: {
-                      type: Boolean,
-                      required: true,
-                      default: false,
-                    },
-                  },
-                ],
-              },
-              summery: {
-                type:String,
-                required:true
-              },
-              links: {
-                type: [
-                  {
-                    tasks: {
-                      type: String,
-                      default: "",
-                    },
-                    Presentations: {
-                      type: String,
-                      default: "",
-                    },
-                    StudyAid: {
-                      type: String,
-                      default: "",
-                    },
-                  },
-                ],
-              },
-              isDone: {
-                type: Boolean,
-                required: true,
-                default: false,
-              },
-            },
-          ],
-        },
-      },
+    name: {
+      type: String,
+      required: true,
     },
-
-    coursesCreator: [{ type: Schema.Types.ObjectId, ref: "staff" }]
+    CourseInformation: {
+      type: [
+        {
+          nameSubject: {
+            type: String,
+            required: true,
+          },
+          topics: {
+            type: [
+              {
+                subject: {
+                  type: String,
+                  required: true,
+                },
+                isDone: {
+                  type: Boolean,
+                  required: true,
+                  default: false,
+                },
+              },
+            ],
+          },
+          summery: {
+            type: String,
+            required: true,
+          },
+          links: {
+            type: [
+              {
+                tasks: {
+                  type: String,
+                  default: "",
+                },
+                Presentations: {
+                  type: String,
+                  default: "",
+                },
+                StudyAid: {
+                  type: String,
+                  default: "",
+                },
+              },
+            ],
+          },
+          isDone: {
+            type: Boolean,
+            required: true,
+            default: false,
+          },
+        },
+      ],
+    },
+    createBy: { type: Schema.Types.ObjectId, ref: "staff" },
+    students: [{ type: Schema.Types.ObjectId, ref: "student" }],
   },
   { timestamps: true }
 );

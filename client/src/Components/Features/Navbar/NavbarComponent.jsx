@@ -1,19 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import techLogo from "../../../images/tech-logo.jpeg";
 import "./Navbar.css";
 
 //Ticker moving news
 export default function Navbar() {
+  const user = useSelector(state => state.user)
   return (
     <>
       <div className="navbar">
         <ul className="navbar-links">
           <li>
-            <Link to={"/news"}>חדשות</Link>
-          </li>
-          <li>
-            <Link to={"/events"}>אירועים</Link>
+            <Link to={"/"}>דף בית</Link>
           </li>
           <li>
             <Link to={"/forum"}>פורום</Link>
