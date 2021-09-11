@@ -20,13 +20,6 @@ const Events = () => {
         massage: "",
     });
 
-<<<<<<< HEAD:client/src/Components/Pages/Events/EventsComponent.jsx
-=======
-    const [eventUpdates, setEventUpdates] = useState({
-        eventName: "",
-        massage: "",
-    });
->>>>>>> main:client/src/Components/Features/Events/EventsComponent.jsx
     const optionPOST = {
         method: 'POST',
         body: JSON.stringify(newEvent),
@@ -46,11 +39,7 @@ const Events = () => {
     }
 
     useEffect( () => {
-<<<<<<< HEAD:client/src/Components/Pages/Events/EventsComponent.jsx
-         getDat();
-=======
         getDat();
->>>>>>> main:client/src/Components/Features/Events/EventsComponent.jsx
     }, [])
 
     const getDat = async () => {
