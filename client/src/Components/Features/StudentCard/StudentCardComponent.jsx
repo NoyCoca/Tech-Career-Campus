@@ -39,28 +39,21 @@ const StudentCard = ({ student }) => {
             {hebrewVariables.age}: {student.age}
           </p>
           <div className="student-card-body-btn">
-            {user.role === "Staff" ? (
-              <>
-                {" "}
-                <button
-                  className="btn"
-                  onClick={() => dispatch(deleteStudent(student._id))}
-                >
-                  {hebrewVariables.delete}
-                </button>
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setIsEdit(true);
-                    setStudentUpdate({ ...studentUpdate, _id: student._id });
-                  }}
-                >
-                  {hebrewVariables.edit}
-                </button>
-              </>
-            ) : (
-              ""
-            )}
+            {user.role === "Staff" ? <> <button
+              className="btn"
+              onClick={() => dispatch(deleteStudent(student._id))}
+            >
+              {hebrewVariables.delete}
+            </button>
+            <button
+              className="btn"
+              onClick={() => {
+                setIsEdit(true);
+                setStudentUpdate({ ...studentUpdate, _id: student._id });
+              }}
+            >
+              {hebrewVariables.edit}
+            </button></> : ""}          
           </div>
         </div>
       ) : (

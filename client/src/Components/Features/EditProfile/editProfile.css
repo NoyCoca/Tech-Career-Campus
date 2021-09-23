@@ -17,12 +17,10 @@
     justify-content: space-around;
 }
 .edit-profile-btn-container{
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #f4f4f4;
-    
+    align-content: center;
 }
 
 .edit-profile-form>input{
@@ -42,7 +40,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: 400px;
     height:600px;
     background-color: #f2f2f2;
     border: 2px solid #000;

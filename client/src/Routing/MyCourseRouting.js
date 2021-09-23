@@ -29,19 +29,18 @@ const MyCourseRouting = () => {
             {
                 !course._id ? <ChooseCourse /> :
                     <>
-                        <h2 style={{fontSize:"30px",padding:"10px"}}>{course?.name}</h2>
+                        <h2>{course?.name}</h2>
 
                         {
                             user.role === "Staff" ?
-                                <select style={{fontSize:"18px"}}  onChange={(e) => dispatch(getCourse(e.target.value))}>
-                                                                   {
+                                <select onChange={(e) => dispatch(getCourse(e.target.value))}>
+                                    <option></option>                                    {
                                         courses.map(course => <option key={course._id} value={course._id}>{course.name}</option>
                                         )
                                     }
 
                                 </select> : ""}
                         <Tabs
-                        style={{fontSize:"16px"}}
                             defaultActiveKey="course-schedule"
                             transition={false}
                             id="noanim-tab-example"
@@ -53,35 +52,35 @@ const MyCourseRouting = () => {
                     <DailySchedule />
                 </Tab> */}
 
-                            <Tab style={{fontSize:"16px"}} eventKey="course-schedule" title={hebrewVariables.CourseSchedule}  >
+                            <Tab eventKey="course-schedule" title={hebrewVariables.CourseSchedule}  >
                                 <CourseSchedule />
                             </Tab>
-                            <Tab style={{fontSize:"16px"}} eventKey="syllabus" title={hebrewVariables.syllabus}>
+                            <Tab eventKey="syllabus" title={hebrewVariables.syllabus}>
                                 <Syllabus />
                             </Tab>
                             {
                                 user.role === "Staff" ?
-                                    <Tab style={{fontSize:"16px"}} eventKey="Student-grades" title={hebrewVariables.studentsGrades} >
+                                    <Tab eventKey="Student-grades" title={hebrewVariables.studentsGrades} >
                                         <AdminGradesComponent />
                                     </Tab>
                                     :
-                                    <Tab style={{fontSize:"16px"}} eventKey="grades" title={hebrewVariables.myGrades} >
+                                    <Tab eventKey="grades" title={hebrewVariables.myGrades} >
                                         <StudentGradesComponent />
                                     </Tab>
                             }
                             {
-                                <Tab style={{fontSize:"16px"}} eventKey="Students" title={hebrewVariables.students} >
+                                <Tab eventKey="Students" title={hebrewVariables.students} >
                                     <Students />
                                 </Tab>
                             }
                             {
-                                user.role === "Staff" ? <Tab style={{fontSize:"16px"}} eventKey="Creat-course" title={hebrewVariables.createCourse} >
+                                user.role === "Staff" ? <Tab eventKey="Creat-course" title={hebrewVariables.createCourse} >
                                     <CreatCourse />
                                 </Tab> : ""
                             }
 
                             {
-                                user.role === "Staff" ? <Tab style={{fontSize:"16px"}} eventKey="staff" title={hebrewVariables.staff} >
+                                user.role === "Staff" ? <Tab eventKey="staff" title={hebrewVariables.staff} >
                                     <StaffComponents />
                                 </Tab> : ""
                             }

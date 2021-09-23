@@ -57,8 +57,13 @@ const EditProfile = ({ setOpen,open, user , setEditProfile}) => {
           name={"phone"}
           onChange={(e) => handleChange(e, userUpdate, setUserUpdate)}
         />
-        <div className={`edit-profile-btn-container ${changePassword?"edit-profile-form":""}`}>
-        
+        <div className='edit-profile-btn-container'>
+        <button
+        className='btn'
+          onClick={() => setChangePassword(changePassword ? false : true)}
+        >
+          {hebrewVariables.updatePassword}
+        </button>
         {changePassword ? (
           <>
             <label>{hebrewVariables.currentPassword}</label>
@@ -71,12 +76,6 @@ const EditProfile = ({ setOpen,open, user , setEditProfile}) => {
         ) : (
           ""
         )}
-        <button
-        className='btn'
-          onClick={() => setChangePassword(changePassword ? false : true)}
-        >
-          {hebrewVariables.updatePassword}
-        </button>
         <button className='btn' onClick={() => dispatch(updateUser(userUpdate))}>
           {hebrewVariables.update}
         </button>

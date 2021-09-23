@@ -5,7 +5,7 @@
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     background-color: #f4f4f4;
 }
-.register-form-form input{
+.register-form-form>input{
     color: #3c3c3c;
     font-weight: 500;
     font-size: 18px;
@@ -17,7 +17,7 @@
     width: 100%;
     border: 3px solid rgba(0, 0, 0, 0);
 }
-.register-form-form button{
+.register-form-form>button{
     width: 100%;
     border: #fbfbfb solid 4px;
     cursor: pointer;
@@ -28,7 +28,7 @@
     transition: all 0.3s;
     font-weight: 700;
 }
-.register-form-form button:hover{
+.register-form-form>button:hover{
     background-color: rgba(0, 0, 0, 0);
     color: rgb(255, 117, 3);
     border: rgb(255, 117, 3) solid 4px;

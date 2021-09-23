@@ -5,7 +5,7 @@ import { hebrewVariables } from "../../../utils/hebrewVariables";
 import SelectCourseSubjects from "../../Features/SelectCourseSubjects/SelectCourseSubjectsComponent";
 import CreateNewSubject from "../../Features/CreateNewSubject/CreateNewSubjectComponent";
 import { createCourse } from "../../../Redux/actions/coursesActions";
-import './createCourse.css'
+
 
 const CreatCourse = () => {
   const [corseType, setCourseType] = useState();
@@ -29,11 +29,11 @@ const CreatCourse = () => {
   }, [courses]);
 
   return (
-    <div className='create-course'>
+    <div>
       <PageHeader title={hebrewVariables.createCourse} />
       {createCourseErrors ? (
         <>
-          <form className='create-course-form'>
+          <form>
             <label>{hebrewVariables.courseName}</label>
             <input
               type={"text"}
@@ -68,7 +68,6 @@ const CreatCourse = () => {
             </select>
           </form>
           <button
-          className='btn'
             onClick={() => setNewSubjectForm(newSubjectForm ? false : true)}
           >
             {hebrewVariables.createNewSubject}
@@ -89,7 +88,6 @@ const CreatCourse = () => {
             courseInformation={courseInformation}
           />
           <button
-          className='btn'
             onClick={() =>
               setNewCourse({
                 ...newCourse,
@@ -104,7 +102,6 @@ const CreatCourse = () => {
         <div>
           <p>נוצר בהצלחה. {newCourse.name}</p>
           <button
-          
             onClick={() => {
               setCreateCourseErrors(true);
               setNewCourse();

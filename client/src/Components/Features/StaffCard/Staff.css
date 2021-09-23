@@ -1,49 +1,25 @@
-.staff-card{
-    margin: 10px;
+.body{
     display: flex;
+    justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
-    width: 30vw;
-    height: 30vh ;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    background-color: #f4f4f4;
 }
-.staff-card-img{
-    width: 30%;
-    height: inherit;
-}
-.staff-card-img  img {
-    border-radius: 100%;
-    width: 100%;
-    padding: 10px;
-}
-.staff-card-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 60%;
+
+.body-staff{
+   
+
+   
+    border: 1px solid black;
+    width: 100vw;
     height: 100%;
 }
-.staff-card-body>p{
-    font-size: 18px;
-}
-.staff-card-body-btn{
-    width: 100%;
+.body-staff .body-staff-cards{
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-
-.staff-card-body-btn  .btn{
-    margin: 0 5px;
-}
-
-.staff-card-body-form  input {
-    font-size: 15px;
-    border: none;
-    border-radius: 25px;
-    width: 60%;
-}
-.staff-card-body-form .btn{
-    margin:5px;
+    justify-content: center;
+    flex-direction: column;
+    
+    border: 1px solid black;
+    width: 200px;
+    height: 450px;
+    margin-top: 50px;
 }

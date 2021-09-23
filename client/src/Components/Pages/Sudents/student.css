@@ -1,11 +1,17 @@
 .students-container{
     margin: auto;
-   
+}
+
+.students-card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
 }
 
 .student-card-container{
     display: flex;
     flex-wrap: wrap;
-    width: 99vw;
-    margin: auto;
+    width: 70vw;
+    margin-right: 15px;
 }

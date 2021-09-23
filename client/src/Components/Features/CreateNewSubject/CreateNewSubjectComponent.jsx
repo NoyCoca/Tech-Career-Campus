@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./createNewSubject.css";
+
 const CreateNewSubject = ({
   setCourseInformation,
   courseInformation,
@@ -12,10 +12,7 @@ const CreateNewSubject = ({
   });
   const [inputValue, setInputValue] = useState();
   return (
-    <form
-      className="create-subject-course-form"
-      onSubmit={(e) => e.preventDefault()}
-    >
+    <form onSubmit={(e) => e.preventDefault()}>
       <label>שם הנושא</label>
       <input
         type="text"
@@ -47,7 +44,7 @@ const CreateNewSubject = ({
       >
         הוסף תת נושא
       </button>
-      <label>שם הנושא {newSubject.nameSubject} </label>
+      <label>שם הנושא {newSubject.nameSubject  } </label>
       <label>תתי נושאים</label>
       {newSubject.topics.map((topic) => (
         <label>{topic.subject}</label>
