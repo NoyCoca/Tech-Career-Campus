@@ -188,7 +188,7 @@ const updateSubject = async (req, res) => {
     const SubjectField = {}
     SubjectField[SubjectPath] = req.body.newValue
     await CourseModel.findOneAndUpdate(
-      { _id: req.body._id },
+      { _id: req.body.course_id },
       { $set: SubjectField },
       {
         arrayFilters: [{ "object._id": { _id: req.body.Subject_id } }],
