@@ -19,7 +19,6 @@ const FormEvent = ({ user }) => {
             }
         )
     }
-
     return (
         <div className="form-event">
             <form onSubmit={(e) => { e.preventDefault() }}>
@@ -29,7 +28,7 @@ const FormEvent = ({ user }) => {
                 <textarea name="massage" id="massage" cols="100" rows="10" value={newEvent.massage} placeholder={hebrewVariables.eventMassagePlaceholder} onChange={(e) => { hendleChange(e) }}></textarea>
                 <br />
                 <div className="bth-send-event">
-                    <button type="submit" onClick={() => { dispatch(createEvent(newEvent)); setNewEvent({ eventName: "", massage: "" })}} > {hebrewVariables.send} </button>
+                    <button type="submit" onClick={() => { dispatch(createEvent(newEvent)) }} > {hebrewVariables.send} </button>
                 </div>
             </form>
         </div>

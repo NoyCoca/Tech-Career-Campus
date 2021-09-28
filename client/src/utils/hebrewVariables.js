@@ -78,11 +78,5 @@ export const hebrewVariables=
     eventNameTitle: "שם הארוע",
     eventMassagetTitle: "הודעה",
     responsibleFor:"אחראי על:",
-    job:"תפקיד:",
-    homework:"משימות",
-    addHomework:"הוסף משימה",
-    createHomework:"צור משימה",
-    subject:"נושא",
-    description:"תיאור"
-
+    job:"תפקיד:"
 } 

@@ -12,7 +12,7 @@ import StaffComponents from '../Components/Pages/Staff/StaffComponents';
 import ChooseCourse from '../Components/Features/ChooseCourse/ChooseCourseComponent'
 import { getCourse } from '../Redux/actions/courseActions';
 import { hebrewVariables } from '../utils/hebrewVariables';
-import Homework from '../Components/Pages/Homework/HomeworkComponent';
+
 const MyCourseRouting = () => {
     const { user } = useSelector(state => state.user);
     const course = useSelector((state) => state.course);
@@ -85,9 +85,6 @@ const MyCourseRouting = () => {
                                     <StaffComponents />
                                 </Tab> : ""
                             }
-                            <Tab eventKey="homework" title={hebrewVariables.homework}>
-                                <Homework />
-                            </Tab>
                         </Tabs>
                     </>
 

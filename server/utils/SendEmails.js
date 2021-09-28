@@ -34,7 +34,9 @@ const SendEmails = (req, res) => {
 
   try {
     transporter.sendMail(options, (error, info) => {
-      if (error) throw error
+      if (error) {
+        return console.log(error);
+      }
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { styled } from '@mui/material/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,12 +11,16 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { addStuff } from '../../../Redux/actions/staffAction';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import Alert from '@mui/material/Alert';
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
 
 
 
 const AddStaffComponent = ({ open, handleClose }) => {
     const [staffUser, setStaffUser] = useState({ registeredAs: "Staff" })
     const [isRegister, setIsRegister] = useState(false);
+    const [img, setImg] = useState(null)
 
     const dispatch = useDispatch();
     const { errors } = useSelector((state) => state.staff);
@@ -48,6 +53,12 @@ const AddStaffComponent = ({ open, handleClose }) => {
     }
 
 
+    const Input = styled('input')({
+        display: 'none',
+    });
+
+    const image = new FormData();
+    image.append('profileImg', img)
 
     return (
         <div>
@@ -163,6 +174,17 @@ const AddStaffComponent = ({ open, handleClose }) => {
                         value={staffUser.responsible}
 
                     />
+
+                    <IconButton color="primary" aria-label="upload picture" component="span">
+                        <Input accept="image/*" id="icon-button-file" name="profileImg" type="file"
+                            onChange={e => {
+                                setImg(e.target.files[0])
+                                console.log(img);
+                            }} />
+                        בחר תמונת פרופיל
+                        <PhotoCamera />
+                    </IconButton>
+
                 </DialogContent>
 
                 <DialogActions>

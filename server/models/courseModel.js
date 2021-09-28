@@ -35,8 +35,7 @@ const courseSchema = new Schema(
           },
           summery: {
             type: String,
-            required: false,
-            default:""
+            required: true,
           },
           links: {
             type: [

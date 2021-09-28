@@ -61,13 +61,4 @@ export const UPDATE_EVENT = "UPDATE_EVENT"
 export const DELETE_EVENT = "DELETE_EVENT"
 export const GET_EVENTS = "GET_EVENTS"
 
-// Homework 
-
-
-export const GET_HOMEWORK = "GET_HOMEWORK"
-export const CREATE_HOMEWORK = "CREATE_HOMEWORK"
-export const DELETE_HOMEWORK = "DELETE_HOMEWORK"
-export const EDIT_HOMEWORK = "EDIT_HOMEWORK"
-
-
 

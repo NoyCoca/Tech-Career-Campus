@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "setup": "npm install && cd client&& npm install ",
-    "test": "set TEST_ENV=test&& mocha --reporter spec --recursive --exit  || true",
+    "test": "mocha **/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\"",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "nodemon server/server.js",
     "server": "nodemon server/server.js",
@@ -18,6 +19,7 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@react-icons/all-files": "^4.1.0",
     "bcrypt": "^5.0.1",
+    "chai": "^4.3.4",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -29,11 +31,10 @@
     "multer": "^1.4.3",
     "nodemailer": "^6.6.3",
     "react-icons": "^4.2.0",
+    "mocha": "^9.1.1",
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "chai-http": "^4.3.0",
     "concurrently": "^6.2.1",
     "mocha": "^9.1.1",
     "nodemon": "^2.0.7"

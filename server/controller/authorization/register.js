@@ -4,34 +4,23 @@ const CourseModel = require("../../models/courseModel");
 const bcrypt = require("bcrypt");
 const validateRegisterInput = require("./registerValidator");
 const { SendEmails } = require("../../utils/SendEmails");
+const path = require("path")
 
 const register = async (req, res) => {
   if (req.body.registeredAs === "Staff") {
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
-      return res
-      .status(401)
-      .json({
-        success: false,
-        message: "there is error with validation",
-        error: errors 
-      });
+      return res.status(401).json({ errors: errors });
     }
 
-    await StaffModel.findOne({ email: req.body.email }, (err, result) => {
+    await StaffModel.findOne({ email: req.body.email }, (err, staff) => {
       if (err) throw err;
-      if (result) {
-        return res
-        .status(401)
-        .json({                
-          success: false,
-          message: "email already exists",
-        });
+      if (staff) {
+        return res.status(401).json({ errors: { email: "email already exists" } });
       }
       SendEmails(req, res);
       //Password Encryption Before That it enters to the database
       bcrypt.genSalt(12, (err, salt) => {
-        if (err) throw err; 
         bcrypt.hash(req.body.password, salt, async (err, hash) => {
           if (err) throw err;
           req.body.password = hash;
@@ -52,21 +41,18 @@ const register = async (req, res) => {
 
           });
           try {
+
             await newStaff.save();
-            res
-            .status(201)
-            .json({
+            res.status(201).json({
               success: true,
               message: "create new staff success",
               data: newStaff,
             });
-          } catch (err) {
-            res
-            .status(400)
-            .json({
+          } catch (error) {
+            res.status(401).json({
               success: false,
               message: "create new staff filed",
-              error: err.message,
+              errors: error,
             });
           }
         });
@@ -77,25 +63,14 @@ const register = async (req, res) => {
   if (req.body.registeredAs === "Student") {
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
-      return res
-      .status(400)
-      .json({
-        success:false,
-        message:"there is error with validation",
-        error:errors
-      });
+      return res.status(400).json(errors);
     }
 
-    await StudentModel.findOne({ email: req.body.email }, (err, result) => {
+    await StudentModel.findOne({ email: req.body.email }, (err, student) => {
       if (err) throw err;
-      if (result) {
-        return res
-        .status(400)
-        .json({
-          success: false,
-          message: "email already exists",
-      });
-    }
+      if (student) {
+        return res.status(400).json({ errors: { email: "email already exists" } });
+      }
       SendEmails(req, res);
       //Password Encryption Before That it enters to the database
       bcrypt.genSalt(12, (err, salt) => {
@@ -104,14 +79,14 @@ const register = async (req, res) => {
           if (err) throw err;
           req.body.password = hash;
 
-          const course = await CourseModel.findById(req.body.courseId);
+          const course = await CourseModel.findById(req.body.courseId)
           if (!course) {
             res
               .status(403)
               .json({
                 success: false,
                 message: "filed",
-                error: "find course filed",
+                errors: "find course filed",
               });
           }
 
@@ -140,13 +115,11 @@ const register = async (req, res) => {
                 message: "create new student success",
                 data: newStudent,
               });
-          } catch (err) {
-            res
-            .status(400)
-            .json({
+          } catch (error) {
+            res.status(400).json({
               success: false,
               message: "create new student filed",
-              error: err.message
+              errors: error,
             });
           }
         });

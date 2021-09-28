@@ -137,7 +137,6 @@ const SyllabusComponent = () => {
                                             topic._id
                                           )
                                         }
-                                        type="text"
                                       />
                                       <button
                                         type="button"

@@ -115,7 +115,7 @@ const StaffCard = ({ staffItem }) => {
           </div>
           <div className="staff-card-body-btn">
             <Button>
-              <DeleteIcon onClick={() => deletestaffHandler(staffItem._id)} />
+              <DeleteIcon onClick={() => deletestaffHandler(_id)} />
             </Button>
             <Button
               onClick={() => {

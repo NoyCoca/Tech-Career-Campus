@@ -1,45 +1,30 @@
 const StaffModel = require("../models/staffModel");
-const { nullError, isEmptyId } = require("../utils/Errors");
+const CourseModel = require("../models/courseModel");
+const { nullError , isEmptyId } = require("../utils/Errors");
 const jwt = require("jsonwebtoken");
 const SECRET_KEY = process.env.SECRET_KEY;
-const path = require('path');
-const fs = require('fs');
 
 const getAllStaff = async (req, res) => {
   try {
     await StaffModel.find({}, (err, result) => {
-      if (err) throw err;
       nullError(result, res);
+      if (err) throw err;
     });
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "find staff filed",
-        error: err.message
-      });
+    res.status(500).json({ massage: "find staff filed", data: error });
   }
 };
-
 const getStaffById = async (req, res) => {
   try {
     isEmptyId(req.params.id);
     await StaffModel.findById(req.params.id, (err, result) => {
-      if (err) throw err;
-      nullError(result, res);
+       nullError(result , res);
+       if (err) throw err;
     });
-  } catch (err) {
-    res
-      .status(400)
-      .json({
-        success: false,
-        message: "find by id staff filed",
-        error: err.message
-      });
+  } catch (error) {
+    res.status(500).json({ massage: "find by id staff filed", data: error });
   }
 };
-
 const deleteStaffById = async (req, res) => {
   try {
     isEmptyId(req.body.id);
@@ -54,41 +39,31 @@ const deleteStaffById = async (req, res) => {
     }
     );
   } catch (err) {
+    console.log(error);
     res
       .status(500)
+<<<<<<< HEAD
       .json({
         success: false,
         message: "delete by id staff filed",
         data: err.message
       });
+=======
+      .json({ massage: "delete by id student filed", data: err.message });
+>>>>>>> 2f4a3804a7155d7931a5b878ef21ad0d6714ec96
   }
 };
-
 const updateStaffById = async (req, res) => {
   try {
     isEmptyId(req.params.id);
      await StaffModel.findByIdAndUpdate(
       req.params.id,
-      // { $set: req.body, profileImg},
       { $set: req.body},
       { new: true },
       (err, result) => {
-        if (err) throw err;
-        let profilePic;
-        if (req.file) {
-          profilePic = req.file.path;
-          try {
-            fs.unlinkSync("" + result.profileImg);
-          } catch (error) {
-            console.log(error);
-          }
-        } else {
-          profilePic = result.profileImg;
-        }
-        result.profileImg = profilePic;
-        result.save();
         delete result.password
         const token = jwt.sign(result.toJSON(), SECRET_KEY, { expiresIn: "1d" });
+<<<<<<< HEAD
         res
           .status(200)
           .json({
@@ -96,16 +71,14 @@ const updateStaffById = async (req, res) => {
             message: "update staff success",
             data: token
           });
+=======
+        res.status(200).json({ message: "success", data: result, result: token });
+        if (err) throw err;
+>>>>>>> 2f4a3804a7155d7931a5b878ef21ad0d6714ec96
       }
     );
-  } catch (err) {
-    res
-      .status(400)
-      .json({
-        success: false,
-        message: "update staff filed",
-        error: err.message
-      });
+  } catch (error) {
+    res.status(500).json({ massage: "update staff filed", data: error });
   }
 };
 

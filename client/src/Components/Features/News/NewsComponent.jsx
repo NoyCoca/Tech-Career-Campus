@@ -16,6 +16,7 @@ const News = () => {
       .catch(err => console.log(err))
   }, [newsApi, newsApiKey]);
 
+  console.log(newsData);
   return !newsData.length ? (
     <CircularProgress />
 

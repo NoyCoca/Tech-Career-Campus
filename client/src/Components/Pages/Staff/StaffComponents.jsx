@@ -5,11 +5,8 @@ import { getStaff } from '../../../Redux/actions/staffAction';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import AddStaffComponent from '../../Features/AddStaffForm/AddStaffComponent';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { deleteStaff } from '../../../Redux/actions/staffAction';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import StaffCard from '../../Features/StaffCard/StaffCard';
-import staffImg from '../../../images/1632247546163.jpg'
 
 
 
@@ -39,8 +36,8 @@ const StaffComponents = () => {
                 </Button>
 
                 {staff?.map((staffItem) => (
-                    <div key={staffItem._id}>
-                        <StaffCard staffItem={staffItem} isEdit={isEdit} setIsEdit={()=>setIsEdit(!isEdit)} />
+                    <div>
+                        <StaffCard staffItem={staffItem} />
                     </div>
                 ))}
             </Paper>

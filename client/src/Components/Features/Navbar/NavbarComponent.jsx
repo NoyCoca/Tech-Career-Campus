@@ -55,7 +55,7 @@ const Navbar = () => {
                 setOpen(true);
               }}
             >
-              <i className="fas fa-cog"></i>
+              <i class="fas fa-cog"></i>
             </button>
           <button className="btn" onClick={() => logout()}>
             {hebrewVariables.logout}

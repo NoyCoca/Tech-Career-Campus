@@ -5,7 +5,7 @@ export const getStudents = (courseId) => async dispatch => {
         .then((response) => dispatch({
             type: GET_STUDENTS,
             payload: response.data,
-        }))
+        })).then(res=>console.log(res))
         .catch((err) => console.log(err));
 }
 export const createStudent = (newStudent) => async dispatch => {

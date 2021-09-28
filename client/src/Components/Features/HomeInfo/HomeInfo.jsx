@@ -13,8 +13,9 @@ export const HomeInfo = () => {
 
         {informationForCorses.map((item, index) => {
           return (
-            <div key={index} className="body-home-info-cards">
-              <div >
+            <div className="body-home-info-cards">
+              <div key={index}>
+
                 <img src={item.img} />
                 <div className="info">
                   <h3>{item.title}</h3>
@@ -33,8 +34,8 @@ export const HomeInfo = () => {
       <div className="body-home-company">
         {Collaborations.map((item, index) => {
           return (
-            <div key={index} className="body-home-company-cards">
-              <div >
+            <div className="body-home-company-cards">
+              <div key={index}>
                 <img src={item.img} />
                 <div className="info">
                   <p>{item.information}</p>

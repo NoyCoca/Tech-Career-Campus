@@ -66,8 +66,8 @@ export const deleteStaff = (staffId) => async dispatch => {
 }
 
 export const updateStaff = (updateStaff) => async dispatch => {
-    
-    const { id } = { ...updateStaff };
+    debugger
+    const  id  = updateStaff._id;
     await fetcher(`http://localhost:8080/api/staff/${id}`, {
         method: 'PUT',
         body: JSON.stringify(updateStaff)

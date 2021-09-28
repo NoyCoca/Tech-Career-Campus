@@ -17,7 +17,7 @@ const StudentCard = ({ student }) => {
     <div className="student-card">
       <div className="student-card-img">
         <img
-          src={studentUpdate.profileImg}
+          src="https://img.lovepik.com/element/40170/3915.png_860.png"
           alt={"Student"}
         />
       </div>

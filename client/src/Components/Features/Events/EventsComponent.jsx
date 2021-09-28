@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaPlus } from 'react-icons/fa';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import FormEvent from './FormEventComponent';
-
 const Events = () => {
     const dispatch = useDispatch();
     const events = useSelector(state => state.events);

@@ -5,21 +5,22 @@ const { nextTick } = require('process');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'images')
+        cb(null, 'images/')
     },
     filename: (req, file, cb) => {
-        cb(null, `${Date.now()}_${file.originalname}`)
+        const ext = path.extname(file.originalname)
+        cb(null, Date.now() + ext)
     }
 })
 
 const upload = multer({
     storage:storage,
     fileFilter: (req, file, cb) => {
-        if (file.mimetype.startsWith('image')) {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
             cb(null, true)
         }
         else{
-            console.log('only image is allowed!');
+            console.log('only jpg & png file supported!');
             cb(null, false)
         }
     },

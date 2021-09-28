@@ -47,6 +47,7 @@ const staffSchema = new Schema(
       type: String,
       default: "",
     },
+    courses: [{ type: Schema.Types.ObjectId, ref: "course"}],
     messages: [{ type: Schema.Types.ObjectId, ref: "forum" }]
   },
   { timestamps: true }

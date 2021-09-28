@@ -1,6 +1,6 @@
 import { GET_STAFF_LIST, ADD_STAFF, DELETE_STAFF, STAFF_ERRORS, UPDATE_STAFF } from '../actions/types'
 
-const staffReducer = (state = { staff: [], errors: {} }, action) => {
+const staffRedcuer = (state = { staff: [], errors: {} }, action) => {
     switch (action.type) {
         case GET_STAFF_LIST:
             return {
@@ -11,11 +11,13 @@ const staffReducer = (state = { staff: [], errors: {} }, action) => {
                 errors: {}, staff: [...state.staff, action.payload]
             }
         case DELETE_STAFF:
-            return { ...state, staff: state.staff.filter(item => item._id !== action.payload._id) }
+            debugger
+            return { errors:{}, staff: state.staff.filter(item => item._id !== action.payload._id) }
 
         case UPDATE_STAFF:
+            debugger
             return {
-                errors: {}, staff: state.staff.map(item => item._id === action.payload._id ? action.payload : item)
+                erros: {}, staff: state.staff.map(item => item._id === action.payload._id ? action.payload : item)
             }
         case STAFF_ERRORS:
             return { ...state, errors: action.payload }
@@ -24,4 +26,4 @@ const staffReducer = (state = { staff: [], errors: {} }, action) => {
     }
 }
 
-export default staffReducer;
+export default staffRedcuer;
