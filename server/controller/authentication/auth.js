@@ -18,7 +18,6 @@ const authRole = (Role) => {
         .json({
           success: false,
           message: "you don't have access",
-          error: error
         });
     } else {
       next();

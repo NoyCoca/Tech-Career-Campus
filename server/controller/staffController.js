@@ -49,7 +49,7 @@ const deleteStaffById = async (req, res) => {
         .status(200)
         .json({
           success: true,
-          message: "delete by id student success!"
+          message: "delete by id staff success!"
         });
     }
     );
@@ -58,7 +58,7 @@ const deleteStaffById = async (req, res) => {
       .status(500)
       .json({
         success: false,
-        message: "delete by id student filed",
+        message: "delete by id staff filed",
         data: err.message
       });
   }
@@ -93,7 +93,7 @@ const updateStaffById = async (req, res) => {
           .status(200)
           .json({
             success: true,
-            message: "success",
+            message: "update staff success",
             data: token
           });
       }
