@@ -42,7 +42,7 @@ export const getUser = (loginInfo) => async dispatch => {
 
 export const updateUser = (updateData, file) => async dispatch => {
     const { _id } = { ...updateData };
-    const basicStaff = 'http://localhost:8080/api/staff/'
+    const basicStaff = 'http://localhost:8080/api/staff/update/'
     const basicStudent = 'http://localhost:8080/api/student/updateStudent/'
 
     const studentUpdate = new FormData()
@@ -55,9 +55,12 @@ export const updateUser = (updateData, file) => async dispatch => {
     studentUpdate.append('phone', updateData.phone || "")
     studentUpdate.append('role', updateData.role || "")
 
-    
+    console.log(updateData,_id)
+
+    debugger
     await fetch(`${updateData.role === 'Staff' ? basicStaff : basicStudent}${_id}`, {
 
+        
         method: 'PUT',
         body: studentUpdate,
         headers: {

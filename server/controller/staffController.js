@@ -95,7 +95,8 @@ const updateStaffById = async (req, res) => {
           .json({
             success: true,
             message: "success",
-            data: token
+            data: result,
+            result: token
           });
       }
     );

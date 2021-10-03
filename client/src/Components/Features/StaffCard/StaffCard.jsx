@@ -1,12 +1,13 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Staff.css";
 import { useDispatch } from "react-redux";
-import { deleteStaff, updateStaff } from "../../../Redux/actions/staffAction";
+import { updateStaff } from "../../../Redux/actions/staffAction";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import handleChange from "../../../utils/handleChange";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
 import Dialog from '@material-ui/core/Dialog';
+import ConfirmDialog from '../../Features/ConfirmDialog/ConfirmComponent'
 
 
 const StaffCard = ({ staffItem }) => {
@@ -15,28 +16,34 @@ const StaffCard = ({ staffItem }) => {
 
   const [isEdit, setIsEdit] = useState(false);
   const [staffUpdate, setStaffUpdate] = useState({ ...staffItem });
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   const { firstName, lastName, phone, email, jod, responsible, profileImg } =
     staffItem;
 
-  const IMAGE_PATH = profileImg?.slice(profileImg.lastIndexOf('\\') + 1, profileImg.length)|| "";
+  const IMAGE_PATH = profileImg?.slice(profileImg.lastIndexOf('\\') + 1, profileImg.length) || "";
 
 
   return (
     <div className="staff-card">
 
+      <ConfirmDialog
+        dialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen} 
+        staff={staffItem}/>
+
       <Dialog aria-labelledby="form-dialog-title" open={isEdit}  >
         <div className="s-card-body-form">
           <div className="staff-card-img">
-          {
-              IMAGE_PATH.length === 0?
+            {
+              IMAGE_PATH.length === 0 ?
                 <img
                   src="https://img.lovepik.com/element/40170/3915.png_860.png"
                   alt={"staff profile"}
 
                 />
                 :
-                
+
                 <img
                   src={`/images/${IMAGE_PATH}`}
                   alt={"staff profile"}
@@ -92,6 +99,7 @@ const StaffCard = ({ staffItem }) => {
             >
               {hebrewVariables.update}
             </Button>
+
           </div>
         </div>
       </Dialog>
@@ -99,20 +107,20 @@ const StaffCard = ({ staffItem }) => {
 
       <div className="s-card-body-form">
         <div className="staff-card-img">
-        {
-              IMAGE_PATH.length === 0?
-                <img
-                  src="https://img.lovepik.com/element/40170/3915.png_860.png"
-                  alt={"staff profile"}
+          {
+            IMAGE_PATH.length === 0 ?
+              <img
+                src="https://img.lovepik.com/element/40170/3915.png_860.png"
+                alt={"staff profile"}
 
-                />
-                :
-                
-                <img
-                  src={`/images/${IMAGE_PATH}`}
-                  alt={"staff profile"}
-                />
-            }
+              />
+              :
+
+              <img
+                src={`/images/${IMAGE_PATH}`}
+                alt={"staff profile"}
+              />
+          }
         </div>
         <div>
           <div>
@@ -139,7 +147,7 @@ const StaffCard = ({ staffItem }) => {
         </div>
         <div className="staff-card-body-btn">
           <Button>
-            <DeleteIcon onClick={() => dispatch(deleteStaff(staffItem._id))} />
+            <DeleteIcon onClick={() => setDialogOpen(!dialogOpen)} />
           </Button>
           <Button
             onClick={() => {
@@ -149,6 +157,7 @@ const StaffCard = ({ staffItem }) => {
           >
             {hebrewVariables.update}
           </Button>
+
         </div>
       </div>
     </div>
