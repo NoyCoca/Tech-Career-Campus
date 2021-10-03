@@ -1,13 +1,6 @@
-import {
-  GET_STAFF_LIST,
-  ADD_STAFF,
-  DELETE_STAFF,
-  STAFF_ERRORS,
-  UPDATE_STAFF,
-  UPDATE_STAFF_PASSWORD,
-} from "../actions/types";
+import { GET_STAFF_LIST, ADD_STAFF, DELETE_STAFF, STAFF_ERRORS, UPDATE_STAFF } from '../actions/types'
 
-const staffRedcuer = (state = { staff: [], errors: {} }, action) => {
+const staffReducer = (state = { staff: [], errors: {} }, action) => {
     switch (action.type) {
         case GET_STAFF_LIST:
             return {
@@ -18,13 +11,12 @@ const staffRedcuer = (state = { staff: [], errors: {} }, action) => {
                 errors: {}, staff: [...state.staff, action.payload]
             }
         case DELETE_STAFF:
-            
-            return { errors:{}, staff: state.staff.filter(item => item._id !== action.payload._id) }
+            return { ...state, staff: state.staff.filter(item => item._id !== action.payload._id) }
 
         case UPDATE_STAFF:
-            
+            debugger
             return {
-                erros: {}, staff: state.staff.map(item => item._id === action.payload._id ? action.payload : item)
+                errors: {}, staff: state.staff.map(item => item._id === action.payload._id ? action.payload : item)
             }
         case STAFF_ERRORS:
             return { ...state, errors: action.payload }
@@ -33,4 +25,4 @@ const staffRedcuer = (state = { staff: [], errors: {} }, action) => {
     }
 }
 
-export default staffRedcuer;
+export default staffReducer;

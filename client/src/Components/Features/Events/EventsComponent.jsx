@@ -3,7 +3,8 @@ import "./Events.css";
 import { useState } from 'react';
 import { getEvents, updateEvent, deleteEvent } from '../../../Redux/actions/eventsActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { FaPlus } from 'react-icons/fa';
+// import { FaPlus } from 'react-icons/fa';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import FormEvent from './FormEventComponent';
 
@@ -43,7 +44,7 @@ const Events = () => {
                 {
                     user.role === "Staff" ?
                         <div className="bth-add">
-                            <button onClick={() => { setForm(isForm ? false : true); }}> <FaPlus /> </button>
+                            <button onClick={() => { setForm(isForm ? false : true); }}> <ControlPointIcon /> </button>
                         </div>
                         : ""
                 }

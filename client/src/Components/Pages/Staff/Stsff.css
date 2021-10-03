@@ -1,0 +1,11 @@
+.staff-container{
+    margin: auto;
+   
+}
+
+.staff-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 99vw;
+    margin: auto;
+}

@@ -36,7 +36,7 @@ const register = async (req, res) => {
           if (err) throw err;
           req.body.password = hash;
 
-          const { firstName, lastName, age, email, phone, role, IdNumber,responsible,jod } = req.body;
+          const { firstName, lastName, age, email, phone, role, IdNumber,responsible,job } = req.body;
           const newStaff = new StaffModel({
             firstName: firstName,
             lastName: lastName,
@@ -48,7 +48,7 @@ const register = async (req, res) => {
             profileImg: req.file ? req.file.path : "",
             IdNumber: IdNumber? IdNumber: "",
             responsible: responsible? responsible:"",
-            jod: jod? jod:"",
+            job: job? job:"",
 
           });
           try {

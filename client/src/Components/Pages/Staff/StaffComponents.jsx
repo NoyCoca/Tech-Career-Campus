@@ -2,8 +2,6 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getStaff } from '../../../Redux/actions/staffAction';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 import AddStaffComponent from '../../Features/AddStaffForm/AddStaffComponent';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import StaffCard from '../../Features/StaffCard/StaffCard';
@@ -24,23 +22,24 @@ const StaffComponents = () => {
     useEffect(() => dispatch(getStaff()), []);
 
     return (
-        <div className="body-staff">
+        <div >
             <h1>הצוות שלנו</h1>
-            <Paper>
+            <div style={{backgroundColor:"#E5E9F0"}}>
                 {
                     open ? <AddStaffComponent open={open} handleClose={() => setOpen(!open)} /> : ""
                 }
 
-                <Button variant="contained" onClick={() => setOpen(!open)}>
+                <button className='btn' onClick={() => setOpen(!open)}>
                     {hebrewVariables.addStuff}
-                </Button>
-
+                </button>
+                <div className='staff-card-container' >
                 {staff?.map((staffItem) => (
                     <div key={staffItem._id}>
                         <StaffCard staffItem={staffItem} isEdit={isEdit} setIsEdit={() => setIsEdit(!isEdit)} />
                     </div>
                 ))}
-            </Paper>
+                 </div>
+            </div>
         </div >
     )
 }

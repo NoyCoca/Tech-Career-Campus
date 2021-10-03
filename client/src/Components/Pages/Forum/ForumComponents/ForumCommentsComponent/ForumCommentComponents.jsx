@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import jwt_decode from "jwt-decode";
 import "./forum-comment.css";
 import { commentPost } from '../../../../../Redux/actions/postsActions'
 

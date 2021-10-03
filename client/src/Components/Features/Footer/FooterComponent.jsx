@@ -63,10 +63,7 @@ const Footer = () => {
           </div>
           <ul className="quick-links">
             <li>
-              <Link to={"/news"}>{hebrewVariables.news} </Link>
-            </li>
-            <li>
-              <Link to={"/events"}>{hebrewVariables.events} </Link>
+              <Link to={"/"}>{hebrewVariables.homePage} </Link>
             </li>
             <li>
               <Link to={"/forum"}>{hebrewVariables.forum} </Link>

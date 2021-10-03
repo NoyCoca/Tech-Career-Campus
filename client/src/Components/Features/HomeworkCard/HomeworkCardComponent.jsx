@@ -1,5 +1,6 @@
 import moment from "moment";
 import { useState } from "react";
+import "./HomeworkCard.css";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteHomework } from "../../../Redux/actions/homeworkActions";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
@@ -16,13 +17,16 @@ const HomeworkCard = ({
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h3>{work.subject}</h3>
-      <p>{work.description}</p>
+    <div className="body-card-work">
+      <div className="info-cardwork">
+
+      <h2>{work.subject}</h2>
+      <h4>{work.description}</h4>
       <p>{moment(work.createdAt).calendar()}</p>
+      </div>
       {user.role === "Staff" ? (
-        <>
-          <button
+        <div className="btn-card">
+          <button className="btn"
             onClick={() => {
               setIsEditHomework(isEditHomework ? false : true);
               setUpdateHomework({...work});
@@ -30,10 +34,10 @@ const HomeworkCard = ({
           >
             {hebrewVariables.edit}
           </button>
-          <button onClick={() =>{setIsDelete(isDelete ? false : true); dispatch(deleteHomework(work._id))}}>
+          <button className="btn" onClick={() =>{setIsDelete(isDelete ? false : true); dispatch(deleteHomework(work._id))}}>
             {hebrewVariables.delete}
           </button>
-        </>
+        </div>
       ) : (
         ""
       )}

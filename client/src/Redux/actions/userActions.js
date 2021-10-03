@@ -42,8 +42,8 @@ export const getUser = (loginInfo) => async dispatch => {
 
 export const updateUser = (updateData, file) => async dispatch => {
     const { _id } = { ...updateData };
-    const basicStaff = 'http://localhost:8080/api/staff/update/'
-    const basicStudent = 'http://localhost:8080/api/student/updateStudent/'
+    const basicStaff = '/api/staff/update/'
+    const basicStudent = '/api/student/updateStudent/'
 
     const studentUpdate = new FormData()
     studentUpdate.append('profileImg', file || updateData.profileImg )

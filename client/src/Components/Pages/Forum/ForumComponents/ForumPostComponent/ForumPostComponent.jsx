@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { ButtonBase } from "@material-ui/core";
-import jwt_decode from "jwt-decode";
 import "./post.css";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost } from "../../../../../Redux/actions/postsActions";

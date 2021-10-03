@@ -16,7 +16,7 @@ const updateClasses = (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        console.log("Succesfully updated");
+        console.log("Successfully updated");
       }
     });
   } else if (req.body.added.length > 0) {
@@ -34,9 +34,8 @@ const updateClasses = (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        console.log("Succesfully Deleted");
+        console.log("Successfully Deleted");
       }
-
     });
   } else if (err) {
     console.log(err);

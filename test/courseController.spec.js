@@ -31,49 +31,38 @@ describe("API REST /api/course", async (done) => {
   //         console.log(data);
   //         // res.should.have.status(200);
   //         // data.should.be.a("array");
-
   //         done();
   //       });
   //   });
-
   ////////////////////get course by id//////////////////
-
   //   it("is get course by id", (done) => {
   //  const id ="613f94a0bc4467548c72134e"
   //     chai
   //       .request(server)
   //       .get("/api/course/getCourseById/"+id)
   //       .set("Authorization", token)
-
   //       .end((err, res) => {
   //         const data = res.body;
   //         console.log(data);
   //         data.should.be.a("object");
-
   //         done();
   //       });
   //   });
-
   //////////////////////delete course by id////////////////////
-
   //   it("is delete course by id", (done) => {
   //  const id ="6159084ffa331b44e4ad48b5"
   //     chai
   //       .request(server)
   //       .delete("/api/course/deleteCourseById/"+id)
   //       .set("Authorization", token)
-
   //       .end((err, res) => {
   //         const data = res.body;
   //         console.log(data);
   //         // data.should.be.a("object");
-
   //         done();
   //       });
   //   });
-
   ///////////////////////////not working updateSubject/////////////////
-
   // it("is update course by id", (done) => {
   //   const id = "6159084ffa331b44e4ad48b5";
   //   const updateCourse = {
@@ -89,13 +78,10 @@ describe("API REST /api/course", async (done) => {
   //       const data = res.body;
   //       console.log(data);
   //       // data.should.be.a("object");
-
   //       done();
   //     });
   // });
-
   ///////////////addSubSubject/////////////////////
-
   // it("is add Sub Subject", (done) => {
   //   const SubSubject = {
   //     course_id: "6131cf7231323fbda852fc2f",
@@ -116,9 +102,7 @@ describe("API REST /api/course", async (done) => {
   //       done();
   //     });
   // });
-
   ///////////////update Sub Subject/////////////////////
-
   // it("is add Sub Subject", (done) => {
   //   const updateSubSubject = {
   //     course_id: "6131cf7231323fbda852fc2f",
@@ -139,6 +123,4 @@ describe("API REST /api/course", async (done) => {
   //       done();
   //     });
   // });
-
-
 });

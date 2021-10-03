@@ -5,7 +5,6 @@ import {
   createPostStudent,
   updatePost,
 } from "../../../../../Redux/actions/postsActions";
-import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 import "./form.css";
 const ForumFormComponent = ({ currentId, setCurrentId }) => {

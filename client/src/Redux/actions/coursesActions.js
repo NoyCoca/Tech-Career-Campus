@@ -2,7 +2,7 @@ import fetcher from "../../utils/fetcher"
 import { CREATE_COURSE, CREATE_COURSE_ERRORS, GET_COURSES } from "./types"
 
 export const getCourses = () => async dispatch => {
-    await fetcher('http://localhost:8080/api/course')
+    await fetcher('/api/course')
 
     .then(response=> dispatch({
         type: GET_COURSES,
@@ -13,7 +13,7 @@ export const getCourses = () => async dispatch => {
 
 export const createCourse = (newCorse) => async dispatch => {
     try {
-        await fetcher(`http://localhost:8080/api/course/addNewCourse`, {
+        await fetcher(`/api/course/addNewCourse`, {
             method: 'POST',
             body: JSON.stringify(newCorse)
         })

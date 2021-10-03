@@ -40,7 +40,7 @@ const staffSchema = new Schema(
     IdNumber: {
       type: String,
     },
-    jod:{
+    job:{
       type: String,
       default: "",
     },

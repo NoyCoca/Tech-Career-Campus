@@ -2,7 +2,7 @@ import fetcher from "../../utils/fetcher"
 import { CREATE_HOMEWORK, DELETE_HOMEWORK, EDIT_HOMEWORK, GET_HOMEWORK } from "./types"
 
 export const getHomework = (id) => async dispatch => {
-    await fetcher(`http://localhost:8080/api/homework/${id}`)
+    await fetcher(`/api/homework/${id}`)
         .then(response => dispatch({
             type: GET_HOMEWORK,
             payload: response.data
@@ -11,7 +11,7 @@ export const getHomework = (id) => async dispatch => {
 }
 
 export const createHomework = (newHomework) => async dispatch => {
-    await fetcher(`http://localhost:8080/api/homework/`, {
+    await fetcher(`/api/homework/`, {
         method: 'POST',
         body: JSON.stringify(newHomework)
     })
@@ -22,7 +22,7 @@ export const createHomework = (newHomework) => async dispatch => {
         .catch(error => console.log(error))
 }
 export const deleteHomework = (id) => async dispatch => {
-    await fetcher(`http://localhost:8080/api/homework/${id}`, {
+    await fetcher(`/api/homework/${id}`, {
         method: 'DELETE',
     })
         .then(response => dispatch({
@@ -33,7 +33,7 @@ export const deleteHomework = (id) => async dispatch => {
 }
 
 export const editHomework = (updateHomework) => async dispatch => {
-    await fetcher(`http://localhost:8080/api/homework/${updateHomework._id}`, {
+    await fetcher(`/api/homework/${updateHomework._id}`, {
         method: 'PUT',
         body: JSON.stringify(updateHomework)
     })

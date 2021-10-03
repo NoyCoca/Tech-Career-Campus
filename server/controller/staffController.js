@@ -70,7 +70,6 @@ const updateStaffById = async (req, res) => {
     isEmptyId(req.params.id);
      await StaffModel.findByIdAndUpdate(
       req.params.id,
-      // { $set: req.body, profileImg},
       { $set: req.body},
       { new: true },
       (err, result) => {

@@ -48,12 +48,36 @@ describe("API REST /api/classSchedule", async (done) => {
   // });
 
   /// the authRole not working
-  // it("Post class schedule by id  ", done => {
+  // it("Post new class schedule   ", done => {
   //   const classSchedule = {
   //     days: [
   //       {
   //         hours: [
-  //           { hour: '8-10', isTaken: true, className: 'testing' }
+  //           { hour: '8-10', isTaken: true, className: 'testing2' },
+  //           { hour: '10-12', isTaken: true, className: 'testing2' }
+
+  //         ]
+  //       }
+  //     ]
+  //   }
+  //   chai.request(server)
+  //     .post("/api/classSchedule/")
+  //     .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjIzLCJqb2QiOiLXqtek16fXmdeTIiwicmVzcG9uc2libGUiOiLXkNeX16jXkNeZ16oiLCJjb3Vyc2VzIjpbXSwibWVzc2FnZXMiOlsiNjE1MWMzMGU3NTYwZjI3ODg4Y2U0OTM2IiwiNjE1MWQ1ZjdhNzM0NjM0ZThjobA2Y2M0Il0sIl9pZCI6IjYxM2Y5NGEwYmM0NDY3NTQ4YzcyMTM0ZSIsInJvbGUiOiJTdGFmZiIsInByb2ZpbGVJbWciOiJpbWFnZXNcXDE2MzI3NjU4MDMxOTRfZ2lybGF2YXRhci5qcGciLCJJZE51bWJlciI6IiIsImV2ZW50cyI6WyI2MTUzMzBhMTliOWMxMTM5ZTg4MzVmYzgiXSwic3R1ZGVudHMiOltdLCJmaXJzdE5hbWUiOiLXoNeV15kiLCJsYXN0TmFtZSI6Iten15XXp9eUIiwiZW1haWwiOiJ0YWxpZ2VyZ3JlQGdtYWlsLmNvbSIsInBob25lIjoiMDU0NjI2NTU3NSIsInBhc3N3b3JkIjoiJDJiJDEyJDJyd21QdS5iUEcvdXl0QS4xbFZFei5WVEZNc2F3UnN6RTdaNVRJbXVYWTBoUnlUZTU5VHFpIiwiY3JlYXRlZEF0IjoiMjAyMS0wOS0xM1QxODoxMjo0OC41MjJaIiwidXBkYXRlZEF0IjoiMjAyMS0wOS0yOFQxNToxMToyOS4yOTBaIiwiX192IjozLCJpYXQiOjE2MzI4NTMyMjAsImV4cCI6MTYzMjkzOTYyMH0.2qBFkNahqbpY_gvnBwLuAVDxf0ca2qIVoRq6DWK3VPE')
+  //     .send(classSchedule)
+  //     .end((err, res) => {
+  //       console.log(res.text)
+  //       res.should.have.status(200);
+
+  //       done();
+  //     });
+  // });
+
+  // it("is not Post class schedule ", done => {
+  //   const classSchedule = {
+  //     days: [
+  //       {
+  //         hours: [
+  //           { hour:'13-14', isTaken: "bla", className:false}
   //         ]
   //       }
   //     ]
@@ -64,23 +88,18 @@ describe("API REST /api/classSchedule", async (done) => {
   //     .send(classSchedule)
   //     .end((err, res) => {
   //       console.log(res.text)
-  //       res.should.have.status(201);
-
+  //       res.should.have.status(400);
+  //       res.text.should.be.deep.eq('{"success":"false", "message":"post failed", "error":"schedule validation failed: days.0.hours.0.hour: Path `hour` is required."}')
   //       done();
   //     });
-  //   afterEach(async () => {
-  //     await ScheduleModel.deleteOne({ className: "testing" })
-  //   })
-
   // });
-
 
 
   /// the authRole not working
   //   it('it should UPDATE a classSchedule given the id', (done) => {
   //      chai.request(server)
   //       .put('/api/classSchedule')
-  //       .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjIzLCJqb2QiOiLXqtek16fXmdeTIiwicmVzcG9uc2libGUiOiLXkNeX16jXkNeZ16oiLCJjb3Vyc2VzIjpbXSwibWVzc2FnZXMiOlsiNjE1MWMzMGU3NTYwZjI3ODg4Y2U0OTM2IiwiNjE1MWQ1ZjdhNzM0NjM0ZThjODA2Y2M0Il0sIl9pZCI6IjYxM2Y5NGEwYmM0NDY3NTQ4YzcyMTM0ZSIsInJvbGUiOiJTdGFmZiIsInByb2ZpbGVJbWciOiJpbWFnZXNcXDE2MzI3NjU4MDMxOTRfZ2lybGF2YXRhci5qcGciLCJJZE51bWJlciI6IiIsImV2ZW50cyI6WyI2MTUzMzBhMTliOWMxMTM5ZTg4MzVmYzgiXSwic3R1ZGVudHMiOltdLCJmaXJzdE5hbWUiOiLXoNeV15kiLCJsYXN0TmFtZSI6Iten15XXp9eUIiwiZW1haWwiOiJ0YWxpZ2VyZ3JlQGdtYWlsLmNvbSIsInBob25lIjoiMDU0NjI2NTU3NSIsInBhc3N3b3JkIjoiJDJiJDEyJDJyd21QdS5iUEcvdXl0QS4xbFZFei5WVEZNc2F3UnN6RTdaNVRJbXVYWTBoUnlUZTU5VHFpIiwiY3JlYXRlZEF0IjoiMjAyMS0wOS0xM1QxODoxMjo0OC41MjJaIiwidXBkYXRlZEF0IjoiMjAyMS0wOS0yOFQxNToxMToyOS4yOTBaIiwiX192IjozLCJpYXQiOjE2MzI4NzA1MDMsImV4cCI6MTYzMjk1NjkwM30.EMZVTkNvHCWM7BQZVrh5sW0JY-xuAda7XHPdYt65jno')
+  //       .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjIzLCJqb2QiOiLXqtek16fXmdeTIiwicmVzcG9uc2libGUiOiLXkNeX16jXkNeZ16oiLCJjb3Vyc2VzIjpbXSwibWVzc2FnZXMiOlsiNjE1MWMzMGU3NTYwZjI3ODg4Y2U0OTM2IiwiNjE1MWQ1ZjdhNzM0NjM0ZThjobA2Y2M0Il0sIl9pZCI6IjYxM2Y5NGEwYmM0NDY3NTQ4YzcyMTM0ZSIsInJvbGUiOiJTdGFmZiIsInByb2ZpbGVJbWciOiJpbWFnZXNcXDE2MzI3NjU4MDMxOTRfZ2lybGF2YXRhci5qcGciLCJJZE51bWJlciI6IiIsImV2ZW50cyI6WyI2MTUzMzBhMTliOWMxMTM5ZTg4MzVmYzgiXSwic3R1ZGVudHMiOltdLCJmaXJzdE5hbWUiOiLXoNeV15kiLCJsYXN0TmFtZSI6Iten15XXp9eUIiwiZW1haWwiOiJ0YWxpZ2VyZ3JlQGdtYWlsLmNvbSIsInBob25lIjoiMDU0NjI2NTU3NSIsInBhc3N3b3JkIjoiJDJiJDEyJDJyd21QdS5iUEcvdXl0QS4xbFZFei5WVEZNc2F3UnN6RTdaNVRJbXVYWTBoUnlUZTU5VHFpIiwiY3JlYXRlZEF0IjoiMjAyMS0wOS0xM1QxODoxMjo0OC41MjJaIiwidXBkYXRlZEF0IjoiMjAyMS0wOS0yOFQxNToxMToyOS4yOTBaIiwiX192IjozLCJpYXQiOjE2MzI4NzA1MDMsImV4cCI6MTYzMjk1NjkwM30.EMZVTkNvHCWM7BQZVrh5sW0JY-xuAda7XHPdYt65jno')
   //       .send({
   //         _id: '6147aa0d5adea82a506a1dd4',
   //         days: [
@@ -104,7 +123,7 @@ describe("API REST /api/classSchedule", async (done) => {
   //   const id = '6151dd46846be8195ce88b0f'
   //   chai.request(server)
   //     .delete("/api/classSchedule/")
-  //     .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjIzLCJqb2QiOiLXqtek16fXmdeTIiwicmVzcG9uc2libGUiOiLXkNeX16jXkNeZ16oiLCJjb3Vyc2VzIjpbXSwibWVzc2FnZXMiOlsiNjE1MWMzMGU3NTYwZjI3ODg4Y2U0OTM2IiwiNjE1MWQ1ZjdhNzM0NjM0ZThjODA2Y2M0Il0sIl9pZCI6IjYxM2Y5NGEwYmM0NDY3NTQ4YzcyMTM0ZSIsInJvbGUiOiJTdGFmZiIsInByb2ZpbGVJbWciOiJpbWFnZXNcXDE2MzI3NjU4MDMxOTRfZ2lybGF2YXRhci5qcGciLCJJZE51bWJlciI6IiIsImV2ZW50cyI6WyI2MTUzMzBhMTliOWMxMTM5ZTg4MzVmYzgiXSwic3R1ZGVudHMiOltdLCJmaXJzdE5hbWUiOiLXoNeV15kiLCJsYXN0TmFtZSI6Iten15XXp9eUIiwiZW1haWwiOiJ0YWxpZ2VyZ3JlQGdtYWlsLmNvbSIsInBob25lIjoiMDU0NjI2NTU3NSIsInBhc3N3b3JkIjoiJDJiJDEyJDJyd21QdS5iUEcvdXl0QS4xbFZFei5WVEZNc2F3UnN6RTdaNVRJbXVYWTBoUnlUZTU5VHFpIiwiY3JlYXRlZEF0IjoiMjAyMS0wOS0xM1QxODoxMjo0OC41MjJaIiwidXBkYXRlZEF0IjoiMjAyMS0wOS0yOFQxNToxMToyOS4yOTBaIiwiX192IjozLCJpYXQiOjE2MzI4NzA1MDMsImV4cCI6MTYzMjk1NjkwM30.EMZVTkNvHCWM7BQZVrh5sW0JY-xuAda7XHPdYt65jno')
+  //     .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2UiOjIzLCJqb2QiOiLXqtek16fXmdeTIiwicmVzcG9uc2libGUiOiLXkNeX16jXkNeZ16oiLCJjb3Vyc2VzIjpbXSwibWVzc2FnZXMiOlsiNjE1MWMzMGU3NTYwZjI3ODg4Y2U0OTM2IiwiNjE1MWQ1ZjdhNzM0NjM0ZThjobA2Y2M0Il0sIl9pZCI6IjYxM2Y5NGEwYmM0NDY3NTQ4YzcyMTM0ZSIsInJvbGUiOiJTdGFmZiIsInByb2ZpbGVJbWciOiJpbWFnZXNcXDE2MzI3NjU4MDMxOTRfZ2lybGF2YXRhci5qcGciLCJJZE51bWJlciI6IiIsImV2ZW50cyI6WyI2MTUzMzBhMTliOWMxMTM5ZTg4MzVmYzgiXSwic3R1ZGVudHMiOltdLCJmaXJzdE5hbWUiOiLXoNeV15kiLCJsYXN0TmFtZSI6Iten15XXp9eUIiwiZW1haWwiOiJ0YWxpZ2VyZ3JlQGdtYWlsLmNvbSIsInBob25lIjoiMDU0NjI2NTU3NSIsInBhc3N3b3JkIjoiJDJiJDEyJDJyd21QdS5iUEcvdXl0QS4xbFZFei5WVEZNc2F3UnN6RTdaNVRJbXVYWTBoUnlUZTU5VHFpIiwiY3JlYXRlZEF0IjoiMjAyMS0wOS0xM1QxODoxMjo0OC41MjJaIiwidXBkYXRlZEF0IjoiMjAyMS0wOS0yOFQxNToxMToyOS4yOTBaIiwiX192IjozLCJpYXQiOjE2MzI4NzA1MDMsImV4cCI6MTYzMjk1NjkwM30.EMZVTkNvHCWM7BQZVrh5sW0JY-xuAda7XHPdYt65jno')
   //     .send(id)
   //     .end((err, res) => {
   //         res.should.have.status(200);

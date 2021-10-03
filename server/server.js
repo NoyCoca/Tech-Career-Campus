@@ -35,7 +35,17 @@ app.use("/api/forum", isToken, routeForum);
 app.use("/api", routeLoginRegister);
 app.use("/api/event", isToken, routeEvent);
 app.use("/api/classSchedule", isToken, classScheduleRouting);
-app.use("/api/homework",isToken, routeHomework);
+app.use("/api/homework", isToken, routeHomework);
+
+if (process.env.NODE_ENV === "production") {
+}
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.get('*', (req, res)=>{
+      res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  });
+}
 
 
 const server = app.listen(PORT, () => {
@@ -43,14 +53,7 @@ const server = app.listen(PORT, () => {
     `${chalk.green("tech_career")} ${chalk.yellow(
       "live and up on port"
     )} ${chalk.blue(PORT)}`
-    );
+  );
 });
 
 module.exports = server;
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-  });
-}

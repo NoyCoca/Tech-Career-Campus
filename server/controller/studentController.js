@@ -207,22 +207,6 @@ const deleteStudent = async (req, res) => {
   }
 };
 
-// const deleteStudent = async (req, res) => {
-//   try {
-//       await StudentModel.findOneAndDelete({_id:req.body.id}, (err) => {
-//       if (err) throw err;
-//       res
-//       .status(200)
-//       .json({ message: "delete by id student success"});
-//     });
-
-//   } catch (err) {
-//     res
-//       .status(500)
-//       .json({ message: "delete by id student filed", error: err.message });
-//   }
-// };
-
 const getSyllabusByCourse = async (req, res) => {
   try {
     isEmptyId(req.body.id);
