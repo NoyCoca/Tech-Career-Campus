@@ -30,7 +30,7 @@ export const updateSyllabus = (newSyllabus,e) => async dispatch => {
         .catch(error => console.log(error))
 }
 export const updateSubSubject = (newSyllabus) => async dispatch => {
-    await fetcher("http://localhost:8080/api/course/updateSubSubject", {
+    await fetcher("/api/course/updateSubSubject", {
         method: 'PUT',
         headers:{
             "Accept":"apllication/json",

@@ -32,6 +32,7 @@ const staffSchema = new Schema(
     },
     role: {
       type: String,
+      default:"Staff"
     },
     profileImg: {
       type: String,
@@ -39,7 +40,7 @@ const staffSchema = new Schema(
     IdNumber: {
       type: String,
     },
-    jod:{
+    job:{
       type: String,
       default: "",
     },

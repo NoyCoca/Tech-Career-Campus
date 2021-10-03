@@ -16,7 +16,7 @@ const eventSchema = new Schema(
       type: Date,
       required: true,
       default: Date.now,
-      index: { expires: '90d' }
+      index: { expires: '40d' }
     },
     createBy: {
       type: String,

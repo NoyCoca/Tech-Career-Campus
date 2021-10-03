@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./HomeworkFrom.css";
 import { useDispatch } from "react-redux";
 import {
   createHomework,
@@ -7,6 +8,8 @@ import {
 import handleChange from "../../../utils/handleChange";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
 import homeworkValidator from "./homeworkValidator";
+import './homeworkForm.css'
+
 
 const HomeworkFrom = ({
   state,
@@ -37,7 +40,11 @@ const HomeworkFrom = ({
   }, [errors]);
 
   return (
+
+    <div className="body-from">
+      <div className="create-from">
     <form onSubmit={(e) => e.preventDefault()}>
+      <div>
       <label>{hebrewVariables.subject}</label>
       <label>{errors.errors ? errors.errors?.subject : ""}</label>
       <input
@@ -46,6 +53,8 @@ const HomeworkFrom = ({
         type="text"
         onChange={(e) => handleChange(e, state, setState)}
       />
+      </div>
+      <div>
       <label>{hebrewVariables.description}</label>
       <label>{errors.errors ? errors.errors?.description : ""}</label>
       <textarea
@@ -54,14 +63,19 @@ const HomeworkFrom = ({
         type="text"
         onChange={(e) => handleChange(e, state, setState)}
       />
-      <button
+      </div>
+      <div >
+      <button className="btn"
         onClick={() => {
           setErrors(homeworkValidator(state));
         }}
       >
         {type === "edit" ? hebrewVariables.update : hebrewVariables.addHomework}
       </button>
+      </div>
     </form>
+    </div>
+    </div>
   );
 };
 

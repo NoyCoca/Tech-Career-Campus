@@ -9,6 +9,6 @@ const {authRole} = require('../controller/authentication/auth');
 const upload = require('../middleware/upload');
 
 router.post('/login', login);
-router.post('/register',isToken,authRole(ADMIN),upload.single('profileImg'), register);
+router.post('/register',upload.single('profileImg'), register);
 router.get('/logout',logout);
 module.exports = router;

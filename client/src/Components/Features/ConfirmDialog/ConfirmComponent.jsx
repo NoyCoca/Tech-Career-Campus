@@ -11,7 +11,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import {deleteStaff} from '../../../Redux/actions/staffAction'
-import { Close } from '@material-ui/icons';
 
 const ConfirmDialog = ({ dialogOpen, setDialogOpen, staff }) => {
   const dispatch = useDispatch();
@@ -26,9 +25,6 @@ const ConfirmDialog = ({ dialogOpen, setDialogOpen, staff }) => {
     <Dialog open={dialogOpen} maxWidth="sm" fullWidth>
       <DialogTitle>Confirm the action</DialogTitle>
       <Box position="absolute" top={0} right={0}>
-        <IconButton>
-          <Close />
-        </IconButton>
       </Box>
       <DialogContent>
         <Typography>האם אתה בטוח שברצונך למחוק את {staff.firstName} {staff.lastName} </Typography>

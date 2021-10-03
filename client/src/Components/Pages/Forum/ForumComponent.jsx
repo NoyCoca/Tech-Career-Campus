@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Pagination from "../../Features/ForumPosts/Pagination";
 import ForumFormComponent from "./ForumComponents/ForumFormComponent/ForumFormComponent";
 import ForumPostsComponent from "./ForumComponents/ForumPostsComponent/ForumPostsComponent";

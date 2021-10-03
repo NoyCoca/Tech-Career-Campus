@@ -17,7 +17,7 @@ chai.use(chaiHttp);
 //         profileImg: "",
 //         IdNumber: "323506489",
 //         responsible: "אחראית על משאבי אנוש",
-//         jod:"כוח אדם",
+//         job:"כוח אדם",
 //     };
 //     chai.request(server)
 //       .post("/api/register")
@@ -36,7 +36,7 @@ chai.use(chaiHttp);
 //         data.should.have.property("firstName").eq(newStaff.firstName);
 //         data.should.have.property("lastName").eq(newStaff.lastName);
 //         data.should.have.property("email").eq(newStaff.email);
-//         data.should.have.property("jod").eq(newStaff.jod);
+//         data.should.have.property("job").eq(newStaff.job);
 //         data.should.have.property("phone").eq(newStaff.phone);
 //         done();
 //       });

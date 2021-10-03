@@ -2,7 +2,7 @@ import fetcher from '../../utils/fetcher';
 import { CREATE_STUDENT, CREATE_STUDENT_ERRORS, DELETE_STUDENT, GET_STUDENTS, UPDATE_STUDENT } from './types'
 
 export const getStudents = (courseId) => async dispatch => {
-    await fetcher(`http://localhost:8080/api/course/students/${courseId}`)
+    await fetcher(`/api/course/students/${courseId}`)
         .then((response) => dispatch({
             type: GET_STUDENTS,
             payload: response.data,
@@ -12,7 +12,7 @@ export const getStudents = (courseId) => async dispatch => {
 }
 export const createStudent = (newStudent) => async dispatch => {
     try {
-        await fetcher("http://localhost:8080/api/register", {
+        await fetcher("/api/register", {
             method: 'POST',
             body: JSON.stringify(newStudent),
         })
@@ -33,7 +33,7 @@ export const createStudent = (newStudent) => async dispatch => {
 
 
 export const deleteStudent = (student) => async dispatch => {
-    await fetcher(`http://localhost:8080/api/student/deleteStudent/${student._id}`, {
+    await fetcher(`/api/student/deleteStudent/${student._id}`, {
         method: 'DELETE',
         body: JSON.stringify({courseId:student.courseId}),
     }).then(response => dispatch({
@@ -46,7 +46,7 @@ export const deleteStudent = (student) => async dispatch => {
 export const updateStudent = (studentUpdate) => async dispatch => {
     const { _id } = { ...studentUpdate };
     debugger
-    await fetcher(`http://localhost:8080/api/student/updateStudent/${_id}`, {
+    await fetcher(`/api/student/updateStudent/${_id}`, {
         method: 'PUT',
         body: JSON.stringify(studentUpdate)
     })

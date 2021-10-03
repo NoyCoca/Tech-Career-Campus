@@ -87,6 +87,7 @@ export const hebrewVariables=
     createBy: "נוצר על ידי",
     selectGender:"זכר/נקבה:",
     male:"זכר",
-    female:"נקבה"
+    female:"נקבה",
+    homePage:"דף בית",
 
 } 

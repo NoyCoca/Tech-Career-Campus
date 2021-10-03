@@ -12,7 +12,8 @@ import { addStuff } from '../../../Redux/actions/staffAction';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import AddAPhoto from '@material-ui/icons/AddAPhoto'
+
 
 
 
@@ -149,14 +150,14 @@ const AddStaffComponent = ({ open, handleClose }) => {
                     />
                     <strong className="errors">{errors?.age ? errors.age : ""}</strong>
                     <TextField
-                        name="jod"
+                        name="job"
                         margin="dense"
                         id="name"
                         label={hebrewVariables.job}
                         type="text"
                         fullWidth
                         onChange={(e) => CreateStaff(e)}
-                        value={staffUser.jod}
+                        value={staffUser.job}
 
                     />
                     <TextField
@@ -179,7 +180,7 @@ const AddStaffComponent = ({ open, handleClose }) => {
 
                             }} />
                         בחר תמונת פרופיל
-                        <AddAPhotoIcon />
+                        <AddAPhoto />
                     </IconButton>
                 </DialogContent>
 

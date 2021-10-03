@@ -1,35 +1,29 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const scheduleSchema = new Schema(
-  {
-    days: {
-      type: [
-              {
-                hours: [
-                  {
-                    hour: {
-                      type: String,
-                      required: true
-                    },                           
-                    className: {
-                      type: String,
-                      required: true
-                    },
-
-                    isTaken: {
-                      type: Boolean,
-                      required: true,
-                      default: false
-                    },
-                  }
-                ]
-              }
-            ],
-          },
+const scheduleSchema = new Schema({
+ 
+  
+  Subject:{
+    require:true,
+    type:String
   },
-  { timestamps: true }
+  StartTime:{
+    require:true,
+    type:Date
+  },
+
+  EndTime:{
+    require:true,
+    type:Date
+  },
+
+  Description:{
+    require:true,
+    type:String
+  },
+}
 );
 
-const Schedule = mongoose.model("schedule", scheduleSchema);
+const Schedule = mongoose.model("classSchedule", scheduleSchema);
 module.exports = Schedule;

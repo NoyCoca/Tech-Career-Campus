@@ -2,7 +2,7 @@ import { CREATE_EVENT, UPDATE_EVENT, DELETE_EVENT, GET_EVENTS } from './types';
 import fetcher from '../../utils/fetcher';
 
 export const getEvents = () => async dispatch => {
-    await fetcher("http://localhost:8080/api/event")
+    await fetcher("/api/event")
         .then((response) => dispatch({
             type: GET_EVENTS,
             payload: response.data
@@ -12,7 +12,7 @@ export const getEvents = () => async dispatch => {
 
 export const createEvent = (event) => async dispatch => {
     try {
-        await fetcher(`http://localhost:8080/api/event/${event.userId}`, {
+        await fetcher(`/api/event/${event.userId}`, {
             method: 'POST',
             body: JSON.stringify({
                 eventName: event.eventName,
@@ -32,7 +32,7 @@ export const createEvent = (event) => async dispatch => {
 
 export const updateEvent = (eventUpdate) => async dispatch => {
     try {
-        await fetcher(`http://localhost:8080/api/event/${eventUpdate.eventId}`, {
+        await fetcher(`/api/event/${eventUpdate.eventId}`, {
             method: 'PUT',
             body: JSON.stringify({
                 eventName: eventUpdate.eventName,
@@ -52,7 +52,7 @@ export const updateEvent = (eventUpdate) => async dispatch => {
 
 export const deleteEvent = (deleteId) => async dispatch => {
     try {
-            await fetcher(`http://localhost:8080/api/event/${deleteId}`, {
+            await fetcher(`/api/event/${deleteId}`, {
                 method: 'DELETE',
             })
                 .then(response => dispatch({

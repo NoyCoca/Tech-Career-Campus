@@ -11,6 +11,7 @@ const options = {
   useCreateIndex: true,
 };
 
+const rel = "mongodb+srv://Tech-Career:5f4dlTe1Y4cXQ5Pj@tech-career.w0ebs.mongodb.net/Teach_Career?retryWrites=true&w=majority"
   if (process.env.TEST_ENV === "test") {
     console.log(dbConnection_test);
      mongoose

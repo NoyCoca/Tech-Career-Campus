@@ -1,10 +1,11 @@
 import React from "react";
 import "./HomeInfo.css";
 import { informationForCorses, Collaborations, titles } from "./Information";
+import "animate.css";
 
 export const HomeInfo = () => {
   return (
-    <div >
+    <div  >
       <div className="title-info">
         <h1>{titles.titleForCorses}</h1>
       </div>
@@ -13,13 +14,16 @@ export const HomeInfo = () => {
 
         {informationForCorses.map((item, index) => {
           return (
+            <div class="animate__animated animate__fadeInUp">
             <div key={index} className="body-home-info-cards">
-              <div >
+              
                 <img src={item.img} />
                 <div className="info">
-                  <h3>{item.title}</h3>
+                  <h1>{item.title}</h1>
                   <p>{item.paragraph}</p>
+                  
                 </div>
+                
               </div>
             </div>
           );
@@ -36,7 +40,7 @@ export const HomeInfo = () => {
             <div key={index} className="body-home-company-cards">
               <div >
                 <img src={item.img} />
-                <div className="info">
+                <div className="info2">
                   <p>{item.information}</p>
                 </div>
               </div>

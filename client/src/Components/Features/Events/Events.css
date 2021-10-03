@@ -10,7 +10,10 @@
     height: fit-content;
     background-color: #17294A;
     position: absolute;
-    margin-right: 130px;
+    /* margin-right: 20px; */
+    margin-top: 50px;
+    overflow: auto
+
     
 }
 .Body .titel-event{
@@ -28,6 +31,8 @@
     height: 70px;
     font-size: 22px;
     font-weight: 600;
+   
+    
 }
 .Body .titel-event .bth-add button{
     display: flex;
@@ -50,7 +55,7 @@
  flex-direction: column;
  align-items: center;
  
- 
+
 }
 
 .Body .body-updete .form-event{
