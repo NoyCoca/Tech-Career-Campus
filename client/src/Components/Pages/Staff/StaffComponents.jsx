@@ -7,11 +7,6 @@ import { hebrewVariables } from '../../../utils/hebrewVariables';
 import StaffCard from '../../Features/StaffCard/StaffCard';
 
 
-
-
-
-
-
 const StaffComponents = () => {
 
     const [open, setOpen] = useState(false)

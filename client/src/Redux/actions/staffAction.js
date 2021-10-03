@@ -86,10 +86,6 @@ export const updateStaff = (updateStaff) => async dispatch => {
 }
 
 export const updateStaffPassword = (updateStaff) => async dispatch => {
-
-    // const { _id } = { ...updateStaff };
-    // debugger
-    console.log(updateStaff.currentPassword)
     await fetcher(`/api/staff/changePassword`, {
         method: 'PUT',
         headers: {

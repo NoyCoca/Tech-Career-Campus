@@ -40,7 +40,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link to={"/class-schedule"}>
-                {hebrewVariables.classSchedual}
+                {hebrewVariables.classSchedule}
               </Link>
             </li>
           </ul>

@@ -8,7 +8,6 @@ router.post("/", scheduleCtrl.getAllClasses);
 router.put("/update", authRole(ADMIN), scheduleCtrl.updateClasses);
 router.post("/update", authRole(ADMIN), scheduleCtrl.updateClasses);
 router.delete("/update", authRole(ADMIN), scheduleCtrl.updateClasses);
-// router.put("/updateClassesName",authRole(ADMIN), scheduleCtrl.updateClassesName);
-// router.put("/getClassById",authRole(ADMIN), scheduleCtrl.getClassById);
+
 
 module.exports = router;

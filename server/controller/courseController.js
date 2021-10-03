@@ -121,8 +121,7 @@ const addSubSubject = async (req, res) => {
           message: "update course failed",
           error: arrayError.message
         })
-      throw arrayError
-      // מציג שגיאה וזורק שוב??
+
     }
     await CourseModel.findOneAndUpdate(
       findCourseInformation(req),

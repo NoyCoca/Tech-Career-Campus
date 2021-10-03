@@ -70,7 +70,7 @@ const getAllMessages = async (req, res) => {
   const { page } = req.query;
   try {
     const LIMIT = 8;
-    const startIndex = (Number(page) - 1) * LIMIT; //get the starting index of evry page
+    const startIndex = (Number(page) - 1) * LIMIT; //get the starting index of every page
     const total = await ForumModel.countDocuments({});
 
     await ForumModel.find({}, (err, result) => {

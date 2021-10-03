@@ -30,9 +30,7 @@ const ClassScheduleComponent = () => {
     adaptor: new UrlAdaptor(),
     headers: [{ 'Authorization': `Bearer ${token}`}] 
   })
-  // useEffect(() => {
-  
-  // }, [dataManager.crossDomain])
+ 
   loadCldr(
     require("cldr-data/main/he/ca-gregorian.json"),
     require("cldr-data/main/he/numbers.json"),

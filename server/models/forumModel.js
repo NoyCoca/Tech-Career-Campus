@@ -25,7 +25,6 @@ const forumSchema = new Schema(
     comments: { type: [String], default: [] },
     authorByStudent: { type: Schema.Types.ObjectId, ref: "student" },
     authorByStaff: { type: Schema.Types.ObjectId, ref: "staff" },
-   // comments: [{ type: Schema.Types.ObjectId, ref: "student" }],
   },
   { timestamps: true }
 );

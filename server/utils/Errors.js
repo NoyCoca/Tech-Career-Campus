@@ -21,7 +21,7 @@ const nullError = (result, res) => {
       .status(400)
       .json({
           success: false,
-          message: "failing",
+          message: "failed",
           error: err.message
       })
     }

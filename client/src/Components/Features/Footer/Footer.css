@@ -1,5 +1,4 @@
 .footerDiv {
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -26,7 +25,6 @@
     
 }
 .container{
-   /* border: 1px solid black;*/ 
     width: 1400px;
     height: 350px;
     display: flex;
@@ -35,12 +33,10 @@
 }
 
 .footerDiv .contactUsClass  {
-    /* border: 1px solid black;*/
     width: 240px;
     height: 150px;
 }
 .footerDiv i {
-    /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -53,13 +49,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* border: 1px solid black; */
     width: 280px;
     height: 40px;
     font-size: 18px;
 }
 .footerDiv .about{ 
-    /*border: 1px solid black;*/ 
     width: 320px;
     height: 120px;
     
@@ -79,7 +73,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-     /* border: 1px solid black;  */
     width: 300px;
     height: 20px;
     
@@ -92,7 +85,6 @@
     margin-top: 10px;
 }
 .footerDiv .aboutUsClass ul li a{
-    /* border: 1px solid black;  */
     color:white;
     text-align: center;
     padding: 0px 10px;
@@ -102,7 +94,6 @@
     transition: all 0.5s;
 }
 .footerDiv .aboutUsClass ul li a:hover{
-    /* background: linear-gradient(to bottom right,rgb(41, 91, 255),rgb(23,41,74),rgb(41, 91, 255)); */
    background-color: rgb(23,41,74);
     color: #f7f4f4;
     text-decoration: none;
@@ -116,7 +107,6 @@
     height: 40px; 
 }
 .title2>h4 {
-     /* border: 1px solid black;  */
     display: flex;
     justify-content: flex-start; 
     font-size: 20px;
@@ -124,7 +114,6 @@
     height: 30px;  
 }
 .quick-link{ 
-/* border: 1px solid black;  */
 width: 180px;
 height: 150px;
 
@@ -136,7 +125,6 @@ flex-direction: column;
 font-size: 18px;
 color: white;
 font-weight: 600; 
-/* border: 1px solid black; */
 
 }
 .Line{

@@ -26,7 +26,7 @@ const News = () => {
             {({ index }) => (
               <a onMouseEnter={() => setMove(false)} onMouseLeave={() => setMove(true)} rel="noreferrer" target="_blank" href={newsData[index]?.url}>
                 <div className="card-news">
-                  <div className="card-news-titel">
+                  <div className="card-news-title">
                     <h1>{newsData[index]?.title}</h1>
                   </div>
                   <img src={newsData[index]?.urlToImage} alt="" />

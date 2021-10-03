@@ -11,11 +11,11 @@ const Footer = () => {
         <div className="aboutUsClass">
           <div className="about">
             <div className="title1">
-              <h2>{hebrewVariables.techCarrer}</h2>
+              <h2>{hebrewVariables.techCareer}</h2>
             </div>
             <ol>
-              <li>{hebrewVariables.techCarrerDescription1}</li>
-              <li>{hebrewVariables.techCarrerDescription2}</li>
+              <li>{hebrewVariables.techCareerDescription1}</li>
+              <li>{hebrewVariables.techCareerDescription2}</li>
             </ol>
           </div>
           <ul>
@@ -72,7 +72,7 @@ const Footer = () => {
               <Link to={"/my-course"}> {hebrewVariables.myCourse}</Link>
             </li>
             <li>
-              <Link to={"/class-schedule"}>{hebrewVariables.classSchedual}</Link>
+              <Link to={"/class-schedule"}>{hebrewVariables.classSchedule}</Link>
             </li>
           </ul>
         </div>
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
           <ul>
             <li>
-              <i className="fas fa-map-marker-alt"></i>{hebrewVariables.techAdress}
+              <i className="fas fa-map-marker-alt"></i>{hebrewVariables.techAddress}
               </li>
             <li>
               <i className="fas fa-phone"></i> {hebrewVariables.techPhone}

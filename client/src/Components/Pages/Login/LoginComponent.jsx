@@ -21,8 +21,8 @@ const Login = () => {
           className="box-root flex-flex flex-direction--column"
           style={{ minHeight: " 100vh", flexGrow: "1" }}
         >
-          <div className="loginbackground box-background--white padding-top--64">
-            <div className="loginbackground-gridContainer">
+          <div className="login_background box-background--white padding-top--64">
+            <div className="login_background-gridContainer">
               <div
                 className="box-root flex-flex"
                 style={{ gridArea: " top / start / 8 / end" }}
@@ -122,7 +122,7 @@ const Login = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {hebrewVariables.techCarrer}
+                  {hebrewVariables.techCareer}
                 </a>
               </h1>
             </div>

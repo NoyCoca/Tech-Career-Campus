@@ -12,8 +12,6 @@ import {
 
 const EditProfile = ({ setOpen, open, user, setEditProfile }) => {
   const [changePassword, setChangePassword] = useState(false);
-  const [currntPassword, setcurrntPassword] = useState("");
-  //   const [updateUser, setUpdateUser] = useState({...user, password:"", newPassword:"", confirmPassword:"" })
   const [userUpdate, setUserUpdate] = useState({ ...user });
   const [file, setFile] = useState(null)
   const dispatch = useDispatch();
@@ -21,10 +19,6 @@ const EditProfile = ({ setOpen, open, user, setEditProfile }) => {
   useEffect(() => setUserUpdate({ ...user }), [user]);
 
   const handleClose = () => setOpen(false);
-  // const handleClose = () => setOpen(false);
-  const currntpassword = (e) => {
-    setcurrntPassword(e.target.value)
-  }
 
   const dispatchNewPassword = () => {
     dispatch(updateStaffPassword({ ...user, currentPassword: userUpdate.currentPassword, newPassword: userUpdate.newPassword }))

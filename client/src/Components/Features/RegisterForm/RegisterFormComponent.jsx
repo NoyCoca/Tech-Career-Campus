@@ -69,7 +69,7 @@ const RegisterForm = ({ SetIsRegister }) => {
           />
           <p> {errors?.phone ? errors.phone : ""} </p>
 
-          <lable>{hebrewVariables.selectGender}</lable>
+          <label>{hebrewVariables.selectGender}</label>
           <input
             type="radio"
             onChange={(e) =>
@@ -110,7 +110,7 @@ const RegisterForm = ({ SetIsRegister }) => {
       ) : (
         <div>
           <h3>
-            {newStudent.firstName} {newStudent.lastName}{hebrewVariables.registerd}
+            {newStudent.firstName} {newStudent.lastName}{hebrewVariables.registered}
           </h3>
           <p> {hebrewVariables.emailSent} {newStudent.email}</p>
           <button onClick={() => {

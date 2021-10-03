@@ -20,10 +20,10 @@ const SyllabusComponent = () => {
   const syllabus = useSelector((state) => state.syllabus);
   const course = useSelector((state) => state.course);
   const [isClicked, setIsClicked] = useState(false);
-  const [courseId, setcourseId] = useState("");
+  const [courseId, setCourseId] = useState("");
   const [topicSubject, setTopicSubject] = useState("");
   const [newSyllabus, setNewSyllabus] = useState({});
-  const [subSubject, setsubSubject] = useState({});
+  const [subSubject, setSubSubject] = useState({});
   const HandleChange = (e, subjectId) => {
     setNewSyllabus({
       ...newSyllabus,
@@ -34,7 +34,7 @@ const SyllabusComponent = () => {
     });
   };
   const HandleTopicChange = (e, subjectId, array, array_id) => {
-    setsubSubject({
+    setSubSubject({
       ...subSubject,
       _id: courseId,
       courseInformationId: subjectId,
@@ -48,7 +48,7 @@ const SyllabusComponent = () => {
   const dispatch = useDispatch();
   useEffect(() => dispatch(getSyllabus(course)), [dispatch, course]);
   useEffect(() => {
-    setcourseId(syllabus._id);
+    setCourseId(syllabus._id);
   }, [HandleChange, HandleTopicChange]);
   return (
     <div>

@@ -26,7 +26,7 @@
   min-height: 100vh;
   overflow: hidden;
 }
-.loginbackground {
+.login_background {
   min-height: 692px;
   position: fixed;
   bottom: 0;
@@ -53,7 +53,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.loginbackground-gridContainer {
+.login_background-gridContainer {
   display: -ms-grid;
   display: grid;
   grid-template-columns: [start] 1fr [left-gutter] repeat(16, 86.6px) [left-gutter] 1fr [end];

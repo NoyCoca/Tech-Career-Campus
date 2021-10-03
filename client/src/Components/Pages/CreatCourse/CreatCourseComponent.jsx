@@ -62,8 +62,8 @@ const CreatCourse = () => {
               <option value={hebrewVariables.devNetEngineers}>
                 {hebrewVariables.devNetEngineers}
               </option>
-              <option value={hebrewVariables.SOCAnalyst}>
-                {hebrewVariables.SOCAnalyst}
+              <option value={hebrewVariables.DataAnalyst}>
+                {hebrewVariables.DataAnalyst}
               </option>
             </select>
           </form>

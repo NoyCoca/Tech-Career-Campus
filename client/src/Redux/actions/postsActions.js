@@ -11,6 +11,7 @@ import {
 } from "../actions/types";
 import jwt_decode from "jwt-decode";
 
+
 export const getPost = (id) => async (dispatch) => {
   dispatch({ type: START_LOADING });
   await fetcher(`/api/forum/${id}`)

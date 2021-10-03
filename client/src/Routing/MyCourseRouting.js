@@ -7,7 +7,6 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import { useDispatch, useSelector } from 'react-redux';
 import Students from '../Components/Pages/Sudents/StudentsComponent';
-// import CreatCourse from '../Components/Pages/CreatCourse/CreatCourseComponent';
 import StaffComponents from '../Components/Pages/Staff/StaffComponents';
 import ChooseCourse from '../Components/Features/ChooseCourse/ChooseCourseComponent'
 import { getCourse } from '../Redux/actions/courseActions';
@@ -72,11 +71,6 @@ const MyCourseRouting = () => {
                                     <Students />
                                 </Tab>
                             }
-                            {/* {
-                                user.role === "Staff" ? <Tab style={{fontSize:"16px"}} eventKey="Creat-course" title={hebrewVariables.createCourse} >
-                                    <CreatCourse />
-                                </Tab> : ""
-                            } */}
 
                             {
                                 user.role === "Staff" ? <Tab style={{fontSize:"16px"}} eventKey="staff" title={hebrewVariables.staff} >

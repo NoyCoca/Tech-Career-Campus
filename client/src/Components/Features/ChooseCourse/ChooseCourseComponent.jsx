@@ -18,14 +18,13 @@ const ChooseCourse = () => {
     if (user.role === "Staff") dispatch(getCourses());
   }, [dispatch, user]);
 
-  const [course, setcourse] = useState([]);
-  const [model, setmodel] = useState(false);
+  const [course, setCourse] = useState([]);
+  const [model, setModel] = useState(false);
   const getData = (id, name) => {
-    let tempdata = [id, name];
-    setcourse((item) => [1, ...tempdata]);
-    return setmodel(true);
-  };
-  console.log(user);
+    let tempData = [id, name]
+    setCourse(item => [1, ...tempData])
+    return setModel(true)
+  }
   const DeleteModel = (props) => {
     let styleModel = {
       width: "200px",
@@ -41,7 +40,7 @@ const ChooseCourse = () => {
         <Button
           style={{ backgroundColor: "rgb(0,67,190)", color: "white" }}
           onClick={() => {
-            return setmodel(false);
+            return setModel(false);
           }}
         >
           חזור{" "}

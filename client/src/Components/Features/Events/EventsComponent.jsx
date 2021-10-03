@@ -3,7 +3,6 @@ import "./Events.css";
 import { useState } from 'react';
 import { getEvents, updateEvent, deleteEvent } from '../../../Redux/actions/eventsActions';
 import { useDispatch, useSelector } from 'react-redux';
-// import { FaPlus } from 'react-icons/fa';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { hebrewVariables } from '../../../utils/hebrewVariables';
 import FormEvent from './FormEventComponent';
@@ -37,8 +36,8 @@ const Events = () => {
 
     return (
         <div className="Body">
-            <div className="titel-event">
-                <div className="updete">
+            <div className="title-event">
+                <div className="update">
                     <p> {hebrewVariables.eventsHeadline} </p>
                 </div>
                 {
@@ -50,7 +49,7 @@ const Events = () => {
                 }
             </div>
 
-            <div className="body-updete">
+            <div className="body-update">
                 {
                     isForm ?
                         <FormEvent user={user} />

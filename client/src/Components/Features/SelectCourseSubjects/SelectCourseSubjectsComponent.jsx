@@ -12,9 +12,10 @@ const SelectCourseSubjects = ({
   const [topics, setTopics] = useState([]);
   const [subject, setSubject] = useState({});
   const [inputValue, setInputValue] = useState();
+  const [isMarked, setisMarked] = useState(false);
 
   useEffect(() => {
-    fetcher(`http://localhost:8080/api/course/search?term=${corseType}`).then(
+    fetcher(`/api/course/search?term=${corseType}`).then(
       (response) =>
         setCourseOptions(response ? response[0]?.CourseInformation : [])
     );
@@ -45,11 +46,16 @@ const SelectCourseSubjects = ({
                       id="vehicle1"
                       name="subject"
                       value={topic.subject}
+                      onClick={() => {
+                        setisMarked(isMarked ? false : true)
+                      }}
                       onChange={(e) =>
-                        setTopics([
-                          ...topics,
-                          { [e.target.name]: e.target.value },
-                        ])
+
+                        isMarked && topics._id != topic._id ? "" :
+                          setTopics([
+                            ...topics,
+                            { [e.target.name]: e.target.value },
+                          ])
                       }
                     />
                     {topic.subject}
