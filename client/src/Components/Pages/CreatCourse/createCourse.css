@@ -16,6 +16,7 @@
     width:30vw;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     background-color: #f4f4f4;
+    border-radius: 5px;
 }
 .create-course-form input{
     color: #3c3c3c;
@@ -30,10 +31,10 @@
     border: 3px solid rgba(0, 0, 0, 0);
 }
 .create-course button{
-    width: 100%;
+    width: 50%;
     border: #fbfbfb solid 4px;
     cursor: pointer;
-    background-color: rgb(49, 3, 255);
+    background-color: #0043be;
     color: white;
     font-size: 24px;
     padding: 5px;

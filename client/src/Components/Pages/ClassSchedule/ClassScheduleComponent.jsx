@@ -62,7 +62,7 @@ const ClassScheduleComponent = () => {
             services={[Day, Week, WorkWeek, Month, Agenda, DragAndDrop, Resize]}
           />
         </ScheduleComponent>
-        <button type="button" onClick={()=>{setSaveChe(saveChe? false:true)}}>עדכן שינוים</button>
+        <button className="updateBtn" type="button" onClick={()=>{setSaveChe(saveChe? false:true)}}>עדכן שינוים</button>
       </div>
     </div>
 
