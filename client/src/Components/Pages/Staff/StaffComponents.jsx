@@ -24,23 +24,24 @@ const StaffComponents = () => {
     useEffect(() => dispatch(getStaff()), []);
 
     return (
-        <div className="body-staff">
+        <div >
             <h1>הצוות שלנו</h1>
-            <Paper>
+            <div style={{backgroundColor:"#E5E9F0"}}>
                 {
                     open ? <AddStaffComponent open={open} handleClose={() => setOpen(!open)} /> : ""
                 }
 
-                <Button variant="contained" onClick={() => setOpen(!open)}>
+                <button className='btn' onClick={() => setOpen(!open)}>
                     {hebrewVariables.addStuff}
-                </Button>
-
+                </button>
+                <div className='staff-card-container' >
                 {staff?.map((staffItem) => (
-                    <div key={staffItem._id}>
-                        <StaffCard staffItem={staffItem} isEdit={isEdit} setIsEdit={() => setIsEdit(!isEdit)} />
+                    <div className='staff-card-container' key={staffItem._id}>
+                        <StaffCard staffItem={staffItem} isEdit={isEdit} setIsEdit={()=>setIsEdit(!isEdit)} />
                     </div>
                 ))}
-            </Paper>
+                 </div>
+            </div>
         </div >
     )
 }

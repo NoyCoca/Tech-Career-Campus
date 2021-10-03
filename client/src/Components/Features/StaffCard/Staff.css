@@ -1,76 +1,93 @@
-.body-staff .staff-card{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 10px;
-   
-}
 
-
-.s-card-body-form{
-    display: flex;
-    justify-content: space-evenly;
-    /* flex-direction: column; */
-    align-items: center;
-    border: 1px solid black;
-    width: 400px;
-    height: 250px;
-}
-.info-profil{
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-    
-    
-}
-
-.staff-card-img{
-    width: 200px;
-    height: 250px;
-    border: 1px solid black;
-    height: inherit;
-    
-}
-.staff-card-img  img {
-    border-radius: 8px;
-    width: 200px;
-    height: 250px;
+/* new card  */
+.big-card {
+    width: 600px;
     padding: 10px;
+    display: inline-block;
 }
 
-/* .staff-card-body{
+.card-article, .card-box {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 60%;
-    height: 100%;
-    border: 1px solid black;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f2f2f2;
     
-} */
-.staff-card-body>p{
-    font-size: 18px;
 }
-.staff-card-body-btn{
-    width: 200px;
+.card-article ul {
+    list-style-type: none;
+}
+.card-box {
+    flex: 3 1 30ch;
+    height: calc(282px + 5vw);
+    overflow: hidden;
+}
+.card-box img {
+    max-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.card-article {
+    border: 2px solid #f2f2f2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.article-content {
+    padding: 16px 32px;
+    flex: 4 1 40ch;
+}
+.article-tags {
+    margin: 0 -8px;
+}
+.article-tag {
+    display: inline-block;
+    margin: 8px;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--primary);
+}
+.article-title {
+    margin: 0;
+    font-size: clamp(1.4em, 2.1vw, 2.1em);
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+}
+.article-title a {
+    text-decoration: none;
+    color: inherit;
+}
+.article-metadata {
+    margin: 0;
+}
+.article-rating {
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+}
+.article-rating span {
+    color: var(--grey);
+}
+.article-votes {
+    font-size: 0.825em;
+    font-style: italic;
+    color: var(--lightgrey);
+}
+.article-button {
     display: flex;
-    justify-content: space-evenly;
-    border: 1px solid black;
-  
+    align-items: center;
+    padding: 6px 14px 6px 12px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 2px solid currentColor;
+    color: var(--primary);
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
 }
-
-.staff-card-body-btn  .btn{
-    margin: 0 5px;
-}
-
-.staff-card-body-form  input {
-    font-size: 15px;
-    border: none;
-    border-radius: 25px;
-    width: 60%;
-    
-}
-.staff-card-body-form .btn{
-    margin:5px;
-    
+.article-save svg {
+    margin-right: 6px;
 }

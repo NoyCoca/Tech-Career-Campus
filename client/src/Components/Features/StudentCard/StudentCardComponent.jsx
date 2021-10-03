@@ -22,121 +22,110 @@ const StudentCard = ({ student }) => {
 
 
   return (
-    <div className="student-card">
-      <div className="student-card-img">
+    <div className="big-card">
+      <article className="card-article">
+        <div className="card-box">
+          <img
+            src={studentUpdate.profileImg}
+            alt={"Student"}
+            style={{ width: "1500", height: "1368" }}
+          />
+        </div>
 
+        {!isEdit ? (
+          <div className="article-content">
+            <h3>
+              {hebrewVariables.fullName}: {student.firstName} {student.lastName}
+            </h3>
+            <p>
+              {hebrewVariables.course}: {student.courseName}
+            </p>
+            <p>
+              {hebrewVariables.email}: {student.email}
+            </p>
+            <p>
+              {hebrewVariables.phone}: {student.phone}
+            </p>
+            <p>
+              {hebrewVariables.age}: {student.age}
+            </p>
+            <div className="student-card-body-btn">
+              {user.role === "Staff" ? (
+                <>
+                  <button
+                    style={{ marginLeft: '5px' }}
+                    className="article-button"
+                    onClick={() => dispatch(deleteStudent(student._id))}
+                  >
+                    {hebrewVariables.delete}
+                  </button>
+                  <button
+                    className="article-button"
+                    onClick={() => {
+                      setIsEdit(isEdit ? false : true); setStudentUpdate({ ...studentUpdate, _id: student._id })
+                    }}
+                  >
+                    {hebrewVariables.edit}
+                  </button>
+                </>
+              ) : (
+                  ""
+                )}
+            </div>
+          </div>
 
-        {
-          IMAGE_PATH.length > 0 ?
-            <img
-              src={`/images/${IMAGE_PATH}`}
-              alt={"Student"}
-            />
-            :
-            <img
-              src={studentUpdate.gender === "זכר" ? maleAvatar : femaleAvatar}
-              alt={"Student"}
-            />
+        ) : (
+            <div className="article-content">
+              <form className="student-card-body-form">
+                <label>{hebrewVariables.firstName}</label>
+                <input
+                  name="firstName"
+                  onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
+                  type={"text"}
+                  value={studentUpdate.firstName}
+                />
+                <label>{hebrewVariables.lastName}</label>
+                <input
+                  name="lastName"
+                  onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
+                  type={"text"}
+                  value={studentUpdate.lastName}
+                />
+                <label>{hebrewVariables.email}</label>
+                <input
+                  name="email"
+                  onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
+                  type={"email"}
+                  value={studentUpdate.email}
+                />
+                <label>{hebrewVariables.phone}</label>
+                <input
+                  name="phone"
+                  onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
+                  type={"text"}
+                  value={studentUpdate.phone}
+                />
+                <label>{hebrewVariables.age}</label>
+                <input
+                  name="age"
+                  onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
+                  type={"number"}
+                  value={studentUpdate.age}
+                />
 
-        }
-
-
-      </div>
-      {!isEdit ? (
-        <div className="student-card-body">
-          <h3>
-            {hebrewVariables.fullName}: {student.firstName} {student.lastName}
-          </h3>
-          <p>
-            {hebrewVariables.course}: {student.courseName}
-          </p>
-          <p>
-            {hebrewVariables.email}: {student.email}
-          </p>
-          <p>
-            {hebrewVariables.phone}: {student.phone}
-          </p>
-          <p>
-            {hebrewVariables.age}: {student.age}
-          </p>
-          <div className="student-card-body-btn">
-            {user.role === "Staff" ? (
-              <>
                 <button
-                  className="btn"
+                  className="article-button"
                   onClick={() => {
-                    setIsDelete(isDelete ? false : true);
-                    dispatch(deleteStudent(student))
-                  }
-                  }
-                >
-                  {hebrewVariables.delete}
-                </button>
-                <button
-                  className="btn"
-                  onClick={() => {
-                    setIsEdit(isEdit ? false : true); setStudentUpdate({ ...studentUpdate, _id: student._id })
+                    setIsEdit(false);
+                    dispatch(updateStudent(studentUpdate));
                   }}
                 >
-                  {hebrewVariables.edit}
+                  {hebrewVariables.ok}
                 </button>
-              </>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-      ) : (
-        <div className="student-card-body">
-          <form className="student-card-body-form">
-            <label>{hebrewVariables.firstName}</label>
-            <input
-              name="firstName"
-              onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
-              type={"text"}
-              value={studentUpdate.firstName}
-            />
-            <label>{hebrewVariables.lastName}</label>
-            <input
-              name="lastName"
-              onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
-              type={"text"}
-              value={studentUpdate.lastName}
-            />
-            <label>{hebrewVariables.email}</label>
-            <input
-              name="email"
-              onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
-              type={"email"}
-              value={studentUpdate.email}
-            />
-            <label>{hebrewVariables.phone}</label>
-            <input
-              name="phone"
-              onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
-              type={"text"}
-              value={studentUpdate.phone}
-            />
-            <label>{hebrewVariables.age}</label>
-            <input
-              name="age"
-              onChange={(e) => handleChange(e, studentUpdate, setStudentUpdate)}
-              type={"number"}
-              value={studentUpdate.age}
-            />
-
-            <button
-              className="btn"
-              onClick={() => {
-                setIsEdit(false);
-                dispatch(updateStudent(studentUpdate));
-              }}
-            >
-              {hebrewVariables.ok}
-            </button>
-          </form>
-        </div>
-      )}
+              </form>
+            </div>
+          )}
+      </article>
     </div>
   );
 };

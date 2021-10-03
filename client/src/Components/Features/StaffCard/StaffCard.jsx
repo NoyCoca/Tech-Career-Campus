@@ -23,136 +23,137 @@ const StaffCard = ({ staffItem }) => {
 
 
   return (
-    <div className="staff-card">
-
-      <Dialog aria-labelledby="form-dialog-title" open={isEdit} >
-        <div className="s-card-body-form">
-          <div className="staff-card-img">
-            {
-              IMAGE_PATH.length === 0 ?
-                <img
-                  src="https://img.lovepik.com/element/40170/3915.png_860.png"
-                  alt={"staff profile"}
-
-                />
-                :
-
-                <img
-                  src={`/images/${IMAGE_PATH}`}
-                  alt={"staff profile"}
-                />
-            }
-          </div>
-          <div >
-            <div className="staff-card-body">
-              <h1>
-                {firstName} {lastName}
-              </h1>
+     <div className="big-card">
+      {isEdit ? (         
+          <article className="card-article">
+            <div className="card-box">
+              <img
+                src={staffImg}
+                alt={"staff"}
+                style={{ width: "1500", height: "1368" }}
+              />
             </div>
-            <div>
-              <lable>{hebrewVariables.responsibleFor}</lable>
-              <input
-                name="responsible"
-                label
-                type="text"
-                onChange={(e) => handleChange(e, staffUpdate, setStaffUpdate)}
-                value={staffUpdate.responsible}
-              />
-              <lable>{hebrewVariables.job}</lable>
-              <input
-                name="jod"
-                label
-                type="text"
-                onChange={(e) => handleChange(e, staffUpdate, setStaffUpdate)}
-                value={staffUpdate.jod}
-              />
-              <div variant="body2" color="text.secondary">
+            <div className="article-content">
+              <p className="article-tags">
+                <span className="article-tag"> {responsible}</span>
+                <span className="article-tag">{jod}</span>
+              </p>
+              <h1 className="article-title">
+                <a href="#">
+                  {firstName} {lastName}
+                </a>
+              </h1>
+
+              <p className="article-metadata">
+                <span className="article-rating"></span>
+                <span className="article-votes"></span>
+              </p>
+
+              <p className="article-desc">
                 <h3>{hebrewVariables.contact}</h3>
                 <ul>
-                  <li>
-                    <input
-                      type="phone"
-                      value={staffUpdate.phone}
-                      onChange={(e) => handleChange(e, staffUpdate, setStaffUpdate)}
-                    />
-                  </li>
+                <lable>{hebrewVariables.responsibleFor}</lable>
+                <br />
+            <input
+              name="responsible"
+              label
+              type="text"
+              onChange={(e) => handleChange(e, staffUpate, setStaffUpdate)}
+              value={staffUpate.responsible}
+            /> <br />
+            <lable>{hebrewVariables.job}</lable>
+            <br />
+            <input
+              name="jod"
+              label
+              type="text"
+              onChange={(e) => handleChange(e, staffUpate, setStaffUpdate)}
+              value={staffUpate.jod}
+            />
+            <div >
+              <h3>{hebrewVariables.contact}</h3>
+              <ul>
+                <li>
+                  <input
+                    type="phone"
+                    value={staffUpate.phone}
+                    onChange={(e) =>
+                      handleChange(e, staffUpate, setStaffUpdate)
+                    }
+                  />
+                </li>
+              </ul>
+            </div>
                 </ul>
-              </div>
-              <Button
+              </p>
+
+              <button
+                className="article-button"
                 onClick={() => {
                   setIsEdit(!isEdit);
-                }}
-              >
-                {hebrewVariables.closeBtn}
-              </Button>
-
-              <Button
-                onClick={() => {
-                  dispatch(updateStaff(staffUpdate));
+                  setStaffUpdate({ ...staffUpate, _id: staffItem._id });
                 }}
               >
                 {hebrewVariables.update}
-              </Button>
+              </button>
+              <button className="article-button">
+                {hebrewVariables.delete}
+                <DeleteIcon onClick={() => deletestaffHandler(staffItem._id)} />
+              </button>
             </div>
-          </div>
-        </div>
-      </Dialog>
-
-
-      <div className="s-card-body-form">
-        <div className="staff-card-img">
-          {
-            IMAGE_PATH.length === 0 ?
+          </article>
+      
+      ) : (
+       
+          <article className="card-article">
+            <div className="card-box">
               <img
-                src="https://img.lovepik.com/element/40170/3915.png_860.png"
-                alt={"staff profile"}
-
+                src={staffImg}
+                alt={"staff"}
+                style={{ width: "1500", height: "1368" }}
               />
-              :
+            </div>
+            <div className="article-content">
+              <p className="article-tags">
+                <span className="article-tag"> {responsible}</span>
+                <span className="article-tag">{jod}</span>
+              </p>
+              <h1 className="article-title">
+                <a href="#">
+                  {firstName} {lastName}
+                </a>
+              </h1>
 
-              <img
-                src={`/images/${IMAGE_PATH}`}
-                alt={"staff profile"}
-              />
-          }
-        </div>
-        <div>
-          <div>
-            <h1>
-              {firstName} {lastName}
-            </h1>
-          </div>
-          <div>
-            <h3>{jod}</h3>
-          </div>
-          <div variant="body2" color="text.secondary">
-            <p>
-              <h4>{hebrewVariables.responsibleFor}</h4>
-              {responsible}
-            </p>
-          </div>
-          <div variant="body2" color="text.secondary">
-            <h3>{hebrewVariables.contact}</h3>
-            <ul>
-              <li>{phone}</li>
-              <li>{email}</li>
-            </ul>
-          </div>
-        </div>
-        <div className="staff-card-body-btn">
-          <Button>
-            <DeleteIcon onClick={() => dispatch(deleteStaff(staffItem._id))} />
-          </Button>
-          <Button
-            onClick={() => {
-              setIsEdit(!isEdit);
-              setStaffUpdate({ ...staffUpdate, _id: staffItem._id });
-            }}
-          >
-            {hebrewVariables.update}
-          </Button>
-        </div>
-      </div>
+              <p className="article-metadata">
+                <span className="article-rating"></span>
+                <span className="article-votes"></span>
+              </p>
+
+              <p className="article-desc">
+                <h3>{hebrewVariables.contact} :</h3>
+                <ul>
+                  <li>{phone}</li>
+                  <li>{email}</li>
+                </ul>
+              </p>
+
+              <button
+                className="article-button"
+                onClick={() => {
+                  setIsEdit(!isEdit);
+                  setStaffUpdate({ ...staffUpate, _id: staffItem._id });
+                }}
+              >
+                {hebrewVariables.update}
+              </button>
+              <button className="article-button">
+                {hebrewVariables.delete}
+                <DeleteIcon onClick={() => deletestaffHandler(staffItem._id)} />
+              </button>
+            </div>
+          </article>
+        
+      )}
     </div>
   );
 };
