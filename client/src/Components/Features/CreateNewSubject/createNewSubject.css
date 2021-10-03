@@ -4,6 +4,7 @@
     width:30vw;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     background-color: #f4f4f4;
+    border-radius: 5px;
 }
 .create-subject-course-form input{
     color: #3c3c3c;

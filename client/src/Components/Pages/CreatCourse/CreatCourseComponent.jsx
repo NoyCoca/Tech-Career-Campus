@@ -83,11 +83,11 @@ const CreatCourse = () => {
             ""
           )}
 
-          <SelectCourseSubjects
+          {/* <SelectCourseSubjects
             corseType={corseType}
             setCourseInformation={setCourseInformation}
             courseInformation={courseInformation}
-          />
+          /> */}
           <button
           className='btn'
             onClick={() =>
