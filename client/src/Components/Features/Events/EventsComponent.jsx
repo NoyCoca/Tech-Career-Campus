@@ -10,7 +10,7 @@ import FormEvent from './FormEventComponent';
 const Events = () => {
     const dispatch = useDispatch();
     const events = useSelector(state => state.events);
-    const {user} = useSelector(state => state.user)
+    const { user } = useSelector(state => state.user)
 
     const [isForm, setForm] = useState(false)
     const [isUpdate, setUpdate] = useState(false)
@@ -73,22 +73,23 @@ const Events = () => {
                                         {
                                             user.role === "Staff" ?
                                                 <>
-                                                   
-                                                 {
+                                                    {
                                                         isUpdate && event._id === eventUpdate.eventId ?
                                                             <div className="textarea-div-event-continer">
-                                                                <textarea cols="15" type="text" name="eventName" className="input-event" value={eventUpdate.eventName} onChange={(e) => { handelChange1(e) }}></textarea>
+                                                                <textarea cols="15" type="text" name="eventName" className="input-textarea" value={eventUpdate.eventName} onChange={(e) => { handelChange1(e) }}></textarea>
                                                                 <textarea cols="15" rows="0.5" name="message" className="input-textarea" value={eventUpdate.message} onChange={(e) => { handelChange1(e) }}></textarea>
 
-                                                              {  isUpdate&&  <input type="button" id="confirmUpdates" value={hebrewVariables.confirmUpdates} onClick={() => { dispatch(updateEvent(eventUpdate)); setUpdate(false) }} />}   
+                                                                {isUpdate && <input type="button" id="confirmUpdates" value={hebrewVariables.confirmUpdates} onClick={() => { dispatch(updateEvent(eventUpdate)); setUpdate(false) }} />}
                                                             </div> : ""
                                                     }
-                                                    
-                                                    <div className="button-div-event">
-                                                        <button onClick={() => { setUpdate(isUpdate ? false : true); setEventUpdate({ ...eventUpdate, eventId: event._id }) }}> {hebrewVariables.update} </button>
-                                                        <button id="deleteBtn" onClick={() => dispatch(deleteEvent(event._id))}> {hebrewVariables.delete}</button>
-                                                    </div>
-
+                                                    {
+                                                        isUpdate === false ?
+                                                        <div className="button-div-event">
+                                                            <button className="btnUpdate" onClick={() => { setUpdate(isUpdate ? false : true); setEventUpdate({ ...eventUpdate, eventId: event._id }) }}> {hebrewVariables.update} </button>
+                                                            <button id="deleteBtn" onClick={() => dispatch(deleteEvent(event._id))}> {hebrewVariables.delete}</button>
+                                                        </div>
+                                                        :""
+                                                    }
                                                 </> : ""
                                         }
                                     </div>
