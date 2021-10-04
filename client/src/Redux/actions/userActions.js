@@ -55,9 +55,12 @@ export const updateUser = (updateData, file) => async dispatch => {
     studentUpdate.append('phone', updateData.phone || "")
     studentUpdate.append('role', updateData.role || "")
 
-    
+    console.log(updateData,_id)
+
+    debugger
     await fetch(`${updateData.role === 'Staff' ? basicStaff : basicStudent}${_id}`, {
 
+        
         method: 'PUT',
         body: studentUpdate,
         headers: {

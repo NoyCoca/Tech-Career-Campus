@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Staff.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateStaff } from "../../../Redux/actions/staffAction";
 import handleChange from "../../../utils/handleChange";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
@@ -13,6 +13,8 @@ const StaffCard = ({ staffItem }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [staffUpdate, setStaffUpdate] = useState({ ...staffItem });
   const [dialogOpen, setDialogOpen] = useState(false);
+  const user = useSelector(state => state.user.user)
+
 
   const { firstName, lastName, phone, email, jod, responsible, profileImg } =
     staffItem;
@@ -20,8 +22,7 @@ const StaffCard = ({ staffItem }) => {
   const IMAGE_PATH =
     profileImg?.slice(profileImg.lastIndexOf("\\") + 1, profileImg.length) ||
     "";
-
-  console.log(IMAGE_PATH);
+  console.log(jod)
   return (
     <div className="big-card">
       <ConfirmDialog
@@ -72,7 +73,7 @@ const StaffCard = ({ staffItem }) => {
                   name="responsible"
                   label
                   type="text"
-                  onChange={(e) =>{handleChange(e, staffUpdate, setStaffUpdate); console.log(staffUpdate)}}
+                  onChange={(e) => { handleChange(e, staffUpdate, setStaffUpdate); console.log(staffUpdate) }}
                   value={staffUpdate.responsible}
                 />{" "}
                 <br />
@@ -102,7 +103,6 @@ const StaffCard = ({ staffItem }) => {
                 </div>
               </ul>
             </p>
-
             <button
               className="article-button"
               onClick={() => {
@@ -164,18 +164,27 @@ const StaffCard = ({ staffItem }) => {
             </ul>
           </p>
 
-          <button
-            className="article-button"
-            onClick={() => {
-              setIsEdit(!isEdit);
-              setStaffUpdate({ ...staffUpdate, _id: staffItem._id });
-            }}
-          >
-            {hebrewVariables.update}
-          </button>
-          <button className="article-button" onClick={() => setDialogOpen(!dialogOpen)} >
-            {hebrewVariables.delete}
-          </button>
+          {
+            user.role === "Staff" ?
+              <>
+                <button
+                  className="article-button"
+                  onClick={() => {
+                    setIsEdit(!isEdit);
+                    setStaffUpdate({ ...staffUpdate, _id: staffItem._id });
+                  }}
+                >
+                  {hebrewVariables.update}
+                </button>
+                <button className="article-button" onClick={() => setDialogOpen(!dialogOpen)} >
+                  {hebrewVariables.delete}
+                </button>
+              </>
+              :
+              ""
+          }
+
+
         </div>
       </article>
     </div>

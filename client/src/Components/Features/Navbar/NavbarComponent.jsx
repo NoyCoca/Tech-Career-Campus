@@ -5,6 +5,8 @@ import techLogo from "../../../images/tech-logo.jpeg";
 import "./Navbar.css";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
 import EditProfile from "../EditProfile/EditProfileConponent";
+import maleAvatar from '../../../images/male-avatar.jpg'
+import femaleAvatar from '../../../images/female-avatar.jpg'
 const logout = () => {
   localStorage.removeItem("jwtToken");
   window.location.href = "./";
@@ -59,14 +61,19 @@ const Navbar = () => {
             <h4>
               היי, {user.firstName} {user.lastName}
             </h4>
-            {IMAGE_PATH.length === 0 ? (
-              <img
-                src="https://img.lovepik.com/element/40170/3915.png_860.png"
-                alt={"Student"}
-              />
-            ) : (
-              <img src={`/images/${IMAGE_PATH}`} alt={"Student"} />
-            )}
+            {
+              IMAGE_PATH.length === 0 ?
+                <img
+                  src={user.gender==="זכר"?maleAvatar:femaleAvatar}
+                  alt={"Student"}
+
+                />
+                :
+                <img
+                  src={`/images/${IMAGE_PATH}`}
+                  alt={"Student"}
+                />
+            }
 
             {editProfile ? (
               <EditProfile

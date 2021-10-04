@@ -15,11 +15,13 @@
     "@progress/kendo-react-all": "^4.9.0",
     "@progress/kendo-react-common": "^4.9.0",
     "@progress/kendo-react-scheduler": "^4.9.0",
+    "@react-icons/all-files": "^4.1.0",
     "@syncfusion/ej2-base": "^19.2.57",
     "@syncfusion/ej2-react-schedule": "^19.2.56",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.1.0",
     "cldr-data": "^36.0.0",
     "generate-password": "^1.6.1",
@@ -38,9 +40,7 @@
     "react-vertical-timeline-component": "^3.3.3",
     "reactjs-popup": "^2.0.5",
     "redux-thunk": "^2.3.0",
-    "web-vitals": "^1.1.2",
-    "@react-icons/all-files": "^4.1.0",
-    "animate.css": "^4.1.1"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import {deleteStaff} from '../../../Redux/actions/staffAction'
-import { Close } from '@material-ui/icons';
+import {hebrewVariables} from '../../../utils/hebrewVariables'
 
 const ConfirmDialog = ({ dialogOpen, setDialogOpen, staff }) => {
   const dispatch = useDispatch();
@@ -28,15 +28,15 @@ const ConfirmDialog = ({ dialogOpen, setDialogOpen, staff }) => {
       <Box position="absolute" top={0} right={0}>
       </Box>
       <DialogContent>
-        <Typography>האם אתה בטוח שברצונך למחוק את {staff.firstName} {staff.lastName} </Typography>
+        <Typography><h3>{hebrewVariables.confirmDelete} {staff.firstName} {staff.lastName}</h3> </Typography>
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={() => setDialogOpen(!dialogOpen)} >
-          Cancel
+          {hebrewVariables.closeBtn}
         </Button>
         <Button color="primary" variant="contained"
           onClick={() => deleteUser()} >
-          Confirm
+          {hebrewVariables.delete}
         </Button>
       </DialogActions>
     </Dialog>
