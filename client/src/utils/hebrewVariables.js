@@ -89,5 +89,6 @@ export const hebrewVariables=
     male:"זכר",
     female:"נקבה",
     homePage:"דף בית",
+    confirmDelete:"האם אתה בטוח שברצונך למחוק את"
 
 } 

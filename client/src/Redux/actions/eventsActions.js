@@ -51,7 +51,8 @@ export const updateEvent = (eventUpdate) => async dispatch => {
 }
 
 export const deleteEvent = (deleteId) => async dispatch => {
-    try {
+    if (window.confirm('are you sure?')) {
+        try {
             await fetcher(`/api/event/${deleteId}`, {
                 method: 'DELETE',
             })
@@ -65,4 +66,5 @@ export const deleteEvent = (deleteId) => async dispatch => {
             console.log(error);
         }
     }
+}
 

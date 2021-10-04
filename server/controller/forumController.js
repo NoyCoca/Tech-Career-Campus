@@ -5,6 +5,7 @@ const {nullError , nullVariable ,isEmptyId} = require("../utils/Errors")
 
 const messagesByStaff = async (req, res) => {
   try {
+  isEmptyId(req.body._id)  
   const staff = await StaffModel.findById(req.body._id);
   nullVariable(staff); 
   const newMessages = new ForumModel({
@@ -36,15 +37,15 @@ const messagesByStaff = async (req, res) => {
 };
 const messagesByStudent = async (req, res) => {
   try { 
-  isEmptyId(req.body.id)  
-  const student = await StudentModel.findById(req.body.id);
+  isEmptyId(req.body._id)  
+  const student = await StudentModel.findById(req.body._id);
   nullVariable(student);
   const newMessages = new ForumModel({
     firstName: req.body.post.firstName,
     email: req.body.post.email,
     title: req.body.post.title,
     message: req.body.post.message,
-    authorByStudent: student.id,
+    authorByStudent: student._id,
   });
     await newMessages.save();
     student.messages.push(newMessages);

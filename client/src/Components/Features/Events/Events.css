@@ -46,7 +46,7 @@
 
 .Body .body-update{
  display: flex;
- justify-content: center;
+ /* justify-content: center; */
  flex-direction: column;
  align-items: center;
  height: 67vh;
@@ -150,14 +150,11 @@
     align-items: center;
     background-color: rgb(250, 250, 250);
     border-radius: 6px;
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 180px;
     margin: 8px;
     font-size: 14px;
-    
 
-    
-    
 }
 
 .EventsNews .inputs-massage{
@@ -165,7 +162,7 @@
     border-radius: 6px;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 4px 4px 20px -10px rgb(23,41,74);
-    width: 220px;
+    width: 250px;
     height: 80px;
     
 }
@@ -197,4 +194,29 @@
     font-size: 15px;
     width: 50px;
     height: 30px;
+}
+
+.input-textarea{
+    width: 235px;
+    margin-right: 25px
+} 
+
+.button-div-event{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#confirmUpdates{
+    width: 90%;
+    margin-right: 28px;
+}
+
+.textarea-div-event-continer{
+    background-color: white;
+    width: 270px;
+    margin-right: 17px;
 }

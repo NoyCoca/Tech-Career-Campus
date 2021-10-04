@@ -26,6 +26,7 @@ const HomeworkCard = ({
       </div>
       {user.role === "Staff" ? (
         <div className="btn-card">
+          <div>
           <button className="btn"
             onClick={() => {
               setIsEditHomework(isEditHomework ? false : true);
@@ -37,6 +38,7 @@ const HomeworkCard = ({
           <button className="btn" onClick={() =>{setIsDelete(isDelete ? false : true); dispatch(deleteHomework(work._id))}}>
             {hebrewVariables.delete}
           </button>
+          </div>
         </div>
       ) : (
         ""

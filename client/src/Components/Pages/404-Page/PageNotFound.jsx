@@ -1,17 +1,18 @@
-import React from 'react'
-import pageNotFoundImg from '../../../images/404.png'
+import React from "react";
+import pageNotFoundImg from "../../../images/404.png";
 import { Link } from "react-router-dom";
-import { hebrewVariables } from '../../../utils/hebrewVariables';
-import "./PageNotFound.css"
+import { hebrewVariables } from "../../../utils/hebrewVariables";
+import "./PageNotFound.css";
 const PageNotFound = () => {
-    return (  <div className="login">
+  return (
+    <div className="login">
       <div className="login-root">
         <div
           className="box-root flex-flex flex-direction--column"
           style={{ minHeight: " 100vh", flexGrow: "1" }}
         >
-          <div className="loginbackground box-background--white padding-top--64">
-            <div className="loginbackground-gridContainer">
+          <div className="login_background box-background--white padding-top--64">
+            <div className="login_background-gridContainer">
               <div
                 className="box-root flex-flex"
                 style={{ gridArea: " top / start / 8 / end" }}
@@ -111,18 +112,22 @@ const PageNotFound = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h1>{hebrewVariables.techCarrer}</h1>
+                  {hebrewVariables.techCareer}
                 </a>
               </h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
                 <div className="formbg-inner padding-horizontal--48">
-                    <h1 className="error-404-h1">404</h1>
-                    <h2 className="error-404-h2"> דף לא נמצא</h2>
-                    <h2 className="error-404-h2">זה או אנחנו או אתה אבל הדף לא נמצא כדי שתחזור לדף הבית </h2>
+                  <h1 className="error-404-h1">404</h1>
+                  <h2 className="error-404-h2"> דף לא נמצא</h2>
+                  <h2 className="error-404-h2">
+                    זה או אנחנו או אתה אבל הדף לא נמצא כדי שתחזור לדף הבית{" "}
+                  </h2>
                 </div>
-             <Link className="error-404-link" to={"/"}>{hebrewVariables.homePage}</Link>
+                <Link className="error-404-link" to={"/"}>
+                  {hebrewVariables.homePage}
+                </Link>
               </div>
             </div>
           </div>
@@ -130,13 +135,6 @@ const PageNotFound = () => {
       </div>
     </div>
   );
-    // return (
-    //     <div id="wrapper">
-    //         <Link to={"/"}>{hebrewVariables.homePage}</Link>
-    //         <img src={pageNotFoundImg} alt="404- page not found" width="550px" height="500px" />
-    
-    //     </div >
-    // )
-}
+};
 
-export default PageNotFound
+export default PageNotFound;
