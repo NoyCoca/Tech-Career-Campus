@@ -9,6 +9,7 @@ import ClassSchedule from '../Components/Pages/ClassSchedule/ClassScheduleCompon
 import Home from '../Components/Pages/Home/HomeComponent';
 import PostDetails from '../Components/Pages/Forum/ForumComponents/PostDetails/PostDetails';
 import PageNotFound from '../Components/Pages/404-Page/PageNotFound';
+import CreatCourse from '../Components/Pages/CreatCourse/CreatCourseComponent'
 
 const MainRouting = () => {
     return (
@@ -18,6 +19,7 @@ const MainRouting = () => {
             <Route path="/forum" component={Forum} />
             <Route path="/my-course" component={MyCourse} />
             <Route path="/class-schedule" component={ClassSchedule} />
+            <Route path="/creatCourse" component={CreatCourse} />
             <Route component={PageNotFound} />
         </Switch>
     )

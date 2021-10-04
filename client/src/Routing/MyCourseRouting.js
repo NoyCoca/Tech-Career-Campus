@@ -72,11 +72,10 @@ const MyCourseRouting = () => {
                                 </Tab>
                             }
 
-                            {
-                                user.role === "Staff" ? <Tab style={{fontSize:"16px"}} eventKey="staff" title={hebrewVariables.staff} >
+                          <Tab style={{fontSize:"16px"}} eventKey="staff" title={hebrewVariables.staff} >
                                     <StaffComponents />
-                                </Tab> : ""
-                            }
+                          </Tab> 
+
                             <Tab eventKey="homework" title={hebrewVariables.homework}>
                                 <Homework />
                             </Tab>

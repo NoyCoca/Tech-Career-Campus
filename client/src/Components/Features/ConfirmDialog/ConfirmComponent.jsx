@@ -28,7 +28,7 @@ const ConfirmDialog = ({ dialogOpen, setDialogOpen, staff }) => {
       <Box position="absolute" top={0} right={0}>
       </Box>
       <DialogContent>
-        <Typography>{hebrewVariables.confirmDelete} {staff.firstName} {staff.lastName} </Typography>
+        <Typography><h3>{hebrewVariables.confirmDelete} {staff.firstName} {staff.lastName}</h3> </Typography>
       </DialogContent>
       <DialogActions>
         <Button variant="contained" onClick={() => setDialogOpen(!dialogOpen)} >
