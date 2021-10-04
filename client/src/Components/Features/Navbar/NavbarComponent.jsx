@@ -5,6 +5,7 @@ import techLogo from "../../../images/tech-logo.jpeg";
 import "./Navbar.css";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
 import EditProfile from "../EditProfile/EditProfileConponent";
+import CreatCourse from "../../Pages/CreatCourse/CreatCourseComponent";
 const logout = () => {
   localStorage.removeItem("jwtToken");
   window.location.href = "./";
@@ -15,35 +16,43 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.user);
   const [open, setOpen] = useState(false);
 
-  const { profileImg } = user
+  const { profileImg } = user;
 
-  const IMAGE_PATH = profileImg?.slice(profileImg.lastIndexOf('\\') + 1, profileImg.length) || "";
-
-
+  const IMAGE_PATH =
+    profileImg?.slice(profileImg.lastIndexOf("\\") + 1, profileImg.length) ||
+    "";
+  console.log(user);
   return (
     <>
       <div className="navbar-main">
         <div className="navbar-logo">
           <img src={techLogo} alt="" />
         </div>{" "}
-        <div className='navbar-links-container'>
-          <div className='navbar-links-header'>
+        <div className="navbar-links-container">
+          <div className="navbar-links-header">
             <ul className="navbar-links">
-            <li>
-              <Link to={"/"}>{hebrewVariables.homePage}</Link>
-            </li>
-            <li>
-              <Link to={"/forum"}>{hebrewVariables.forum}</Link>
-            </li>
-            <li>
-              <Link to={"/my-course"}>{hebrewVariables.myCourse}</Link>
-            </li>
-            <li>
-              <Link to={"/class-schedule"}>
-                {hebrewVariables.classSchedule}
-              </Link>
-            </li>
-          </ul>
+              <li>
+                <Link to={"/"}>{hebrewVariables.homePage}</Link>
+              </li>
+              <li>
+                <Link to={"/forum"}>{hebrewVariables.forum}</Link>
+              </li>
+              <li>
+                <Link to={"/my-course"}>{hebrewVariables.myCourse}</Link>
+              </li>
+              <li>
+                <Link to={"/class-schedule"}>
+                  {hebrewVariables.classSchedule}
+                </Link>
+              </li>
+              {user.job === "מנהלת פדגוגית " || user.job === "מנהל פדגוגי " ? (
+                <li>
+                  <Link to={"/creatCourse"}> צור קורס</Link>
+                </li>
+              ) : (
+                ""
+              )}
+            </ul>
           </div>
         </div>
         <div className="navbar-log-user">
@@ -51,21 +60,25 @@ const Navbar = () => {
             <h4>
               היי, {user.firstName} {user.lastName}
             </h4>
-            {
-              IMAGE_PATH.length === 0 ?
-                <img
-                  src="https://img.lovepik.com/element/40170/3915.png_860.png"
-                  alt={"Student"}
+            {IMAGE_PATH.length === 0 ? (
+              <img
+                src="https://img.lovepik.com/element/40170/3915.png_860.png"
+                alt={"Student"}
+              />
+            ) : (
+              <img src={`/images/${IMAGE_PATH}`} alt={"Student"} />
+            )}
 
-                />
-                :
-                <img
-                  src={`/images/${IMAGE_PATH}`}
-                  alt={"Student"}
-                />
-            }
-
-            {editProfile ? <EditProfile open={open} setOpen={setOpen} user={user} setEditProfile={setEditProfile} /> : ""}
+            {editProfile ? (
+              <EditProfile
+                open={open}
+                setOpen={setOpen}
+                user={user}
+                setEditProfile={setEditProfile}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <button
             className="btn"

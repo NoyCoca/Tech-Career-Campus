@@ -61,11 +61,11 @@ const ChooseCourse = () => {
   const [creatCourse, setCreatCourse] = useState(false)
   return (
     <div id="container">
-      {user.role === "Staff" ?  creatCourse === false ?  "" : <CreatCourse />   : ""}
+      {/* {user.role === "Staff" ?  creatCourse === false ?  "" : <CreatCourse />   : ""}
     
       {creatCourse === true ?  "" : <Button style={{ "backgroundColor": "red", "color": "white","height":"30px" }} size="xxlarg" onClick={()=>{setCreatCourse(true)}}>יצ ירת קורס </Button>  }
       {creatCourse === false ?  "" : <Button style={{ "backgroundColor": "red", "color": "white","height":"30px" }} size="xxlarg" onClick={()=>{setCreatCourse(false)}}> סגור</Button>  }
-      
+       */}
       {courses?.map((course) => (
         <div id="courseCard" key={course._id} style={{ marginTop: "10px" }}>
           <Card sx={{ minWidth: 265 }}>
@@ -80,7 +80,7 @@ const ChooseCourse = () => {
             </CardContent>
             <CardActions>
               <div className="bth-e">
-                {user.job === "מנהלת פדגוגית" || user.job === "מנהל פדגוגי" ? (
+                {user.job === "מנהלת פדגוגית " || user.job === "מנהל פדגוגי "  ? (
                   <>
                     <button className="btn"
                       onClick={() => {
@@ -94,7 +94,8 @@ const ChooseCourse = () => {
                   </>
                 ) : (
                   ""
-                )}
+                )
+                }
               </div>
 
               <button className="btn"
