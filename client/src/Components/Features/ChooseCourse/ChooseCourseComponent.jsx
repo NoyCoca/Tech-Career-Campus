@@ -80,7 +80,7 @@ const ChooseCourse = () => {
             </CardContent>
             <CardActions>
               <div className="bth-e">
-                {user.job === "מנהלת פדגוגית " || user.job === "מנהל פדגוגי "  ? (
+                {user.job === "מנהלת פדגוגית" || user.job === "מנהל פדגוגי"  ? (
                   <>
                     <button className="btn"
                       onClick={() => {

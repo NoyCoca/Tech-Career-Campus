@@ -5,7 +5,6 @@ import techLogo from "../../../images/tech-logo.jpeg";
 import "./Navbar.css";
 import { hebrewVariables } from "../../../utils/hebrewVariables";
 import EditProfile from "../EditProfile/EditProfileConponent";
-import CreatCourse from "../../Pages/CreatCourse/CreatCourseComponent";
 const logout = () => {
   localStorage.removeItem("jwtToken");
   window.location.href = "./";
@@ -45,7 +44,7 @@ const Navbar = () => {
                   {hebrewVariables.classSchedule}
                 </Link>
               </li>
-              {user.job === "מנהלת פדגוגית " || user.job === "מנהל פדגוגי " ? (
+              {user.job === "מנהלת פדגוגית" || user.job === "מנהל פדגוגי" ? (
                 <li>
                   <Link to={"/creatCourse"}> צור קורס</Link>
                 </li>
