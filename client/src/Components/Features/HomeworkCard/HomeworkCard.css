@@ -6,14 +6,13 @@
     border-radius: 6px;
     background-color: white;
     width: 350px;
-    height: 200px;
+    height: 250px;
     margin: 20px;
-    
     
 }
 .info-cardwork{
     width: 100%;
-    height: 150px;
+    height: 200px;
      /* border: 1px solid black; */
     padding: 6px;
     display: flex;
@@ -27,7 +26,7 @@
 }
 .info-cardwork h4{
     font-size: 20px;
-     
+    overflow-y: auto;
 }
 .info-cardwork p{
     font-size: 12px;
