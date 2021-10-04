@@ -1,10 +1,11 @@
 .admin-grade-container{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     /* border: 1px solid #17294A; */
 }
 
 .search {
+  margin-right: 65%;
   width: 100%;
   position: relative;
   display: flex;
@@ -49,6 +50,7 @@
   border: 1px solid black;
   width: 70vw;
   height: 50vh;
+  margin-right: 10%;
   margin-bottom: 20px;
   border: none !important;
   border-spacing: 0 !important;
