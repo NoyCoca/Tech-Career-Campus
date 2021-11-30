@@ -20,6 +20,7 @@ const updateClasses = (req, res) => {
       }
     });
   } else if (req.body.added.length > 0) {
+    // ScheduleModel.find(dataAdded.Subject)
     //Create an Appointment
     const createAppointment = new ScheduleModel({
       Subject: dataAdded.Subject,

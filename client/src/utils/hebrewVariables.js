@@ -7,7 +7,6 @@ export const hebrewVariables=
     classSchedule:'לו"ז כיתות',
     logout:"התנתק",
     syllabus:"סילבוס",
-    edit:"עריכה",
     addChanges: "בצע שינויים",
     studentsGrades:"ציוני סטודנטים",
     students:"סטודנטים",
@@ -88,7 +87,6 @@ export const hebrewVariables=
     selectGender:"זכר/נקבה:",
     male:"זכר",
     female:"נקבה",
-    homePage:"דף בית",
     confirmDelete:"האם אתה בטוח שברצונך למחוק את"
 
 } 

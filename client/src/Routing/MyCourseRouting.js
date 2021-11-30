@@ -20,7 +20,7 @@ const MyCourseRouting = () => {
 
     useEffect(() => {
         if (user.role === "Student") dispatch(getCourse(user.courseId))
-        console.log(user.courseId)
+        // console.log(user.courseId)
     }, [user, dispatch]
     )
 

@@ -51,9 +51,9 @@ else{
           </div>
         </div>
       </div>
-      <div style={{ position: "relative" }}>
+      <div >
         {openTests ? (
-          <EditGradesComponent handleFnc={() => setOpenTests(false)} />
+          <EditGradesComponent students={students} handleFnc={() => setOpenTests(false)} />
         ) : (
           ""
         )}
@@ -73,6 +73,7 @@ else{
                 <td>{student?.firstName}</td>
                 <td>{student?.lastName}</td>
                 <td>{student?.courseName}</td>
+                {/* <td>{student?._id}</td> */}
                 <td
                   onClick={() => {
                     setOpenTests(true);

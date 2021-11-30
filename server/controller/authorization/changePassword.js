@@ -6,7 +6,6 @@ const { SendEmails} = require('../../utils/SendEmails')
 
 
 const checkPassword = async (req, res, next) => {
-    console.log(req.body)
    
     isEmptyId(req.body.id)
     try {
@@ -64,7 +63,7 @@ const changePassword = (req, res) => {
         console.log(req.body.title)
     }
     else {
-        throw new Error('hi')
+        throw new Error('you need to give me a title Staff or Student')
     }
     try {
         nullVariable(person);

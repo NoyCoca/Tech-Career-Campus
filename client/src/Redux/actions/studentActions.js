@@ -38,6 +38,7 @@ export const editGrade = (updateTest) => async dispatch => {
 }
 
 export const addTest = (newTest) => async dispatch => {
+    debugger
     await fetcher(`/api/student/addTestById`, {
         method: 'POST',
         body: JSON.stringify({

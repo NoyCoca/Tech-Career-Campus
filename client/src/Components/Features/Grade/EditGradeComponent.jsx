@@ -4,9 +4,9 @@ import { editGrade, deleteTest } from "../../../Redux/actions/studentActions";
 import "./EditGradeComponent.css";
 import AddGrade from "./AddGrade";
 import {hebrewVariables} from '../../../utils/hebrewVariables'
-const EditGradeComponent = ({ handleFnc }) => {
+const EditGradeComponent = ({ handleFnc , students }) => {
   const student = useSelector((state) => state.student);
-
+  console.log(student)
   const dispatch = useDispatch();
   
   const [editTest, setEditTest] = useState({ isEdit: false, testId: "" });
@@ -14,10 +14,12 @@ const EditGradeComponent = ({ handleFnc }) => {
   const [updateTest, setUpdateTest] = useState({
     studentId: student._id,
   });
+ console.log(updateTest);
+
   const [testDelete, setTestDelete] = useState({
     studentId: student._id,
   });
-  useEffect(() => dispatch(deleteTest(testDelete)), [testDelete, dispatch]);
+  // useEffect(() => dispatch(deleteTest(testDelete)), [testDelete, dispatch]);
 
   const HandleChange = (e) => {
     setUpdateTest({
@@ -25,6 +27,8 @@ const EditGradeComponent = ({ handleFnc }) => {
       [e.target.name]: e.target.value,
       gradeId: editTest.testId,
     });
+
+    console.log(updateTest)
   };
   return (
     <div className="student-info">
@@ -33,7 +37,11 @@ const EditGradeComponent = ({ handleFnc }) => {
         {student?.firstName} {student?.lastName}
       </h1>
       <hr />
-      {student?.tests.map((test, index) => {
+      {student?.tests?.map((test, index) => {
+
+{
+  console.log(test)
+}
         return (
           <div className="grade-form" key={test._id}>
             <h4>{test.name}</h4>

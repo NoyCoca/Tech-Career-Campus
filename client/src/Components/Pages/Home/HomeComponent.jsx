@@ -6,7 +6,7 @@ import { HomeInfo } from "../../Features/HomeInfo/HomeInfo";
 
 const Home = () => {
   return (
-    <>s
+    <>
     <div className="events">
         <Events />
       </div>

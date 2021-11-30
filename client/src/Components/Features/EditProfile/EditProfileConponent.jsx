@@ -23,7 +23,7 @@ const EditProfile = ({ setOpen, open, user, setEditProfile }) => {
   const dispatchNewPassword = () => {
     dispatch(updateStaffPassword({ ...user, currentPassword: userUpdate.currentPassword, newPassword: userUpdate.newPassword }))
     setChangePassword(false)
-    alert("password change was success")
+    
   }
   return (
 

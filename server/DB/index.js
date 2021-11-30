@@ -13,7 +13,7 @@ const options = {
 
 const rel = "mongodb+srv://Tech-Career:5f4dlTe1Y4cXQ5Pj@tech-career.w0ebs.mongodb.net/Teach_Career?retryWrites=true&w=majority"
   if (process.env.TEST_ENV === "test") {
-    console.log(dbConnection_test);
+    // console.log(dbConnection_test);
      mongoose
       .connect(dbConnection_test, options)
       .then(() => {
@@ -24,7 +24,7 @@ const rel = "mongodb+srv://Tech-Career:5f4dlTe1Y4cXQ5Pj@tech-career.w0ebs.mongod
       });
     
     }else{
-      console.log(dbConnection);
+      // console.log(dbConnection);
       mongoose
       .connect(dbConnection, options)
       .then(() => {

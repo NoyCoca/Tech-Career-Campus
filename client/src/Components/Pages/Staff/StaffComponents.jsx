@@ -15,7 +15,7 @@ const StaffComponents = () => {
     const dispatch = useDispatch();
     const staff = useSelector((state) => state.staff.staff);
     const user = useSelector(state => state.user.user)
-    console.log(user)
+    // console.log(user)
 
     useEffect(() => dispatch(getStaff()), []);
 

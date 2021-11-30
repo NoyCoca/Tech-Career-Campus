@@ -86,6 +86,7 @@ const Navbar = () => {
               ""
             )}
           </div>
+          <div className="article-button-continer">
           <button
             className="btn"
             onClick={() => {
@@ -98,6 +99,7 @@ const Navbar = () => {
           <button className="btn" onClick={() => logout()}>
             {hebrewVariables.logout}
           </button>
+          </div>
         </div>
       </div>
     </>

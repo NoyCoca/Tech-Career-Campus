@@ -103,7 +103,11 @@ export const updateStaffPassword = (updateStaff) => async dispatch => {
             password: updateStaff.password
         })
     })
-        .then(response => console.log(response))
+        .then((response) => {return response})
+        .then((response) => {
+            response.errors? alert(response.errors.password):alert(response.message)
+            return response;
+        })
         .then(response => dispatch({
             type: UPDATE_STAFF_PASSWORD,
             payload: response

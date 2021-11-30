@@ -84,7 +84,7 @@
 }
 .navbar-log-user {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
   align-items: flex-end;
   height: 50px;
@@ -98,8 +98,9 @@
 }
 
 .navbar-user img {
-  width: 45px;
-  border-radius: 50px;
+  width: 27px;
+  border-radius: 5px;
+  height: 36px;
 }
 .navbar-user .btn {
   height: 20px;

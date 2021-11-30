@@ -22,7 +22,6 @@ const StaffCard = ({ staffItem }) => {
   const IMAGE_PATH =
     profileImg?.slice(profileImg.lastIndexOf("\\") + 1, profileImg.length) ||
     "";
-  console.log(jod)
   return (
     <div className="big-card">
       <ConfirmDialog
@@ -166,7 +165,7 @@ const StaffCard = ({ staffItem }) => {
 
           {
             user.role === "Staff" ?
-              <>
+              <div className="article-button-continer" >
                 <button
                   className="article-button"
                   onClick={() => {
@@ -179,12 +178,10 @@ const StaffCard = ({ staffItem }) => {
                 <button className="article-button" onClick={() => setDialogOpen(!dialogOpen)} >
                   {hebrewVariables.delete}
                 </button>
-              </>
+              </div>
               :
               ""
           }
-
-
         </div>
       </article>
     </div>

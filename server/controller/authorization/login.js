@@ -8,7 +8,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 const login = async (req, res) => {
   if (req.body.role === "Staff") {
     const { errors, isValid } = validateLoginInput(req.body);
-    if (!isValid) {
+    if (!isValid) { 
       return res
         .status(400)
         .json({
